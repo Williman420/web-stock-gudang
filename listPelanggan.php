@@ -15,7 +15,7 @@
             <th>alamat</th>
             <th>telepon</th>
             <th>email</th>
-            
+
         </tr>
         <?php
         include 'db_connection.php';
