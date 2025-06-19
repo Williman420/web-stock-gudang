@@ -51,11 +51,23 @@
                                 </div>
                                 <div class="bg-black h-0.5 w-full"></div>
                                 <p class="text-gray-600 text-sm font-semibold"><?= $d['nama_produk'] ?></p>
-                                <div class="mt-2">
+                                <div class="mt-2 flex justify-between">
                                     <div class="flex-col justify-between items-start gap-1">
                                         <p class="text-gray-600 text-sm"><?= $d['deskripsi'] ?></p>
-                                        <h3 class="text-m font-bold text-red-600">Harga beli = <?= $d['harga_beli'] ?></h3>
+                                        <h3 class="text-m font-bold text-red-500">Harga beli = <?= $d['harga_beli'] ?></h3>
                                         <h3 class="text-m font-bold text-green-600">Harga jual = <?= $d['harga_beli'] ?></h3>
+                                    </div>
+                                    <div class="flex gap-2">
+                                        <a href="">
+                                            <button class="p-5 bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+                                                Edit
+                                            </button>
+                                        </a>
+                                        <a href="">
+                                            <button class="p-5 bg-red-400 text-white py-2 rounded hover:bg-red-500">
+                                                Hapus
+                                            </button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
