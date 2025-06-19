@@ -9,7 +9,8 @@
     <h2>CRUD DATA PRODUK</h2>
     <br>
     <h3>Tambah Data Produk</h3>
-    <form action="createProduk.php" method="post">
+    <form action="createProduk.php" method="post" enctype="multipart/form-data">
+        
         <table>
             <tr>
                 <td>Kode Produk</td>
@@ -39,9 +40,11 @@
                 <td>Stok Minimal</td>
                 <td><input type="number" name="stok_minimal"></td>
             </tr>
+                <td>Gambar Produk</td>
+                <td><input type="file" name="gambar_produk" accept=image/*></td>
             <tr>
                 <td></td>
-                <td><input type="submit" value="simpan"></td>
+                <td colspan="2"></td><input type="submit" value="simpan"></td>
             </tr>
         </table>
     </form>

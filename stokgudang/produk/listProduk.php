@@ -11,6 +11,7 @@
             <th>ID</th>
             <th>Kode</th>
             <th>Nama Produk</th>
+            <th>Gambar</th>
             <th>Satuan</th>
             <th>Harga Beli</th>
             <th>Harga Jual</th>
@@ -26,11 +27,21 @@
                 <td><?php echo $d['id_produk'] ?></td>
                 <td><?php echo $d['kode_produk'] ?></td>
                 <td><?php echo $d['nama_produk'] ?></td>
+                <td>
+                  <?php if (!empty($d['gambar_produk'])): ?>
+                        <img src="<?php echo $d['gambar_produk'] ?>" alt="Gambar Produk" class="thumbnail">
+                    <?php else: ?>
+                        <span>Tidak ada gambar</span>
+                    <?php endif; ?>
+                </td>
                 <td><?php echo $d['satuan'] ?></td>
                 <td><?php echo $d['harga_beli'] ?></td>
                 <td><?php echo $d['harga_jual'] ?></td>
                 <td><?php echo $d['stok_minimal'] ?></td>
                 <td>
+                 
+                </td>
+                 <td>
                     <a href="editProduk.php?id_produk=<?php echo $d['id_produk']; ?>">Edit</a>
                     <a href="deleteProduk.php?id_produk=<?php echo $d['id_produk']; ?>">Hapus</a>
                 </td>

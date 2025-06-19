@@ -51,10 +51,24 @@
                     <td><input type="number" name="stok_minimal" value="<?php echo $d['stok_minimal'] ?>"></td>
                 </tr>
                 <tr>
+                    <td>Gambar Produk</td>
+                    <td>
+                        <?php if (!empty($d['gambar_produk'])): ?>
+                            <img src="<?php echo $d['gambar_produk'] ?>" alt="Gambar Produk" width="100">
+                            <?php else: ?>
+                            <span>Belum ada gambar</span>
+                            <?php endif; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Gambar Baru</td>
+                    <td><input type="file" name="gambar_produk"></td>
+                </tr>
+                <tr>
                     <td> <input type="submit" value="SIMPAN"></td>
                 </tr>
             </table>
         </form>
-    <?php } ?>
+        <?php } ?>
 </body>
-</html>
+</html> 
