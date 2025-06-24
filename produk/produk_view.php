@@ -48,7 +48,7 @@
                     foreach ($data as $d) :
                     ?>
                         <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                            <img src="https://via.placeholder.com/300x200" alt="Product Image" class="w-full h-48 object-cover">
+                            <img src=<?= $d['gambar_produk'] ?> alt="Product Image" class="w-full h-48 object-cover">
                             <div class="p-4">
                                 <div class="flex items-center justify-between">
                                     <h3 class="text-lg font-bold"><?= $d['kode_produk'] ?></h3>

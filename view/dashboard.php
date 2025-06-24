@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cool Admin Dashboard</title>
+    <title>kontol Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
@@ -15,7 +15,7 @@
     <?php
     include '../component/sidebar.php'; ?>
 
-    <!-- Main Content -->
+    <!-- Main Content --> 
     <main class="flex-1 p-6 space-y-6">
 
         <!-- Top Bar -->
@@ -30,7 +30,7 @@
                 <i class="fa-regular fa-bell text-xl relative"><span class="absolute top-0 right-0 text-xs bg-red-500 text-white rounded-full w-5 h-5 flex justify-center items-center">3</span></i>
                 <div class="flex items-center gap-2">
                     <img src="https://i.pravatar.cc/40" alt="User" class="rounded-full w-10 h-10" />
-                    <span>John Doe</span>
+                    <span>Mas Nimas</span>
                 </div>
             </div>
         </div>
@@ -39,22 +39,22 @@
         <section class="grid grid-cols-4 gap-6">
             <div class="bg-gradient-to-br from-pink-500 to-indigo-500 text-white p-6 rounded-lg shadow-md">
                 <i class="fa-solid fa-user text-3xl mb-2"></i>
-                <h3 class="text-3xl font-bold">10,368</h3>
+                <h3 class="text-3xl font-bold">10</h3>
                 <p>members online</p>
             </div>
             <div class="bg-gradient-to-br from-green-400 to-teal-500 text-white p-6 rounded-lg shadow-md">
                 <i class="fa-solid fa-cart-shopping text-3xl mb-2"></i>
-                <h3 class="text-3xl font-bold">388,688</h3>
+                <h3 class="text-3xl font-bold">1,303,678</h3>
                 <p>items sold</p>
             </div>
             <div class="bg-gradient-to-br from-pink-400 to-orange-500 text-white p-6 rounded-lg shadow-md">
                 <i class="fa-solid fa-calendar-days text-3xl mb-2"></i>
-                <h3 class="text-3xl font-bold">1,086</h3>
+                <h3 class="text-3xl font-bold">109,909</h3>
                 <p>this week</p>
             </div>
             <div class="bg-gradient-to-br from-yellow-300 to-green-400 text-white p-6 rounded-lg shadow-md">
                 <i class="fa-solid fa-dollar-sign text-3xl mb-2"></i>
-                <h3 class="text-3xl font-bold">$1,060,386</h3>
+                <h3 class="text-3xl font-bold">$1,909,789</h3>
                 <p>total earnings</p>
             </div>
         </section>
