@@ -35,46 +35,46 @@
                             class="cursor-pointer flex flex-col w-1/2 h-1/2 bg-gray-100 p-5 rounded-lg items-center justify-center">
                             <i class="fa-solid fa-plus text-2xl mb-2"></i>
                             <p>Add an Image</p>
-                            <input type="file" class="hidden" name="gambar_produk" />
+                            <input type="file" class="hidden" name="gambar_produk" required/>
                         </label>
                     </div>
 
 
                     <div>
                         <label class="text-sm font-medium block mb-1">Kode Produk *</label>
-                        <input type="text" placeholder="PRD001" name="kode_produk"
+                        <input type="text" placeholder="PRD001" required name="kode_produk" 
                             class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     </div>
                     <div>
-                        <label name="nama_produk" class="text-sm font-medium block mb-1">Nama Produk *</label>
-                        <input type="text" placeholder="Kertas A4" name="nama_produk"
+                        <label class="text-sm font-medium block mb-1">Nama Produk *</label>
+                        <input type="text" placeholder="Kertas A4" required name="nama_produk"
                             class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     </div>
                     <div>
                         <label class="text-sm font-medium block mb-1 ">Deskripsi Produk</label>
-                        <textarea placeholder="Describe your product" name="deskripsi"
+                        <textarea placeholder="Describe your product" required name="deskripsi"
                             class=" w-full   border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 "></textarea>
                     </div>
                     <div class="flex gap-2 justify-between">
                         <div>
                             <label class="text-sm font-medium block mb-1">Qty </label>
-                            <input type="number" placeholder="Enter amount" name="stok_minimal"
+                            <input type="number" placeholder="Enter amount" required name="stok_minimal"
                                 class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
                         </div>
                         <div>
                             <label class="text-sm font-medium block mb-1">Satuan </label>
-                            <input type="text" placeholder="Masukkan Satuan" name="satuan"
+                            <input type="text" placeholder="Masukkan Satuan" required name="satuan"
                                 class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
                         </div>
                     </div>
                     <div>
                         <label class="text-sm font-medium block mb-1 text-red-600">Harga Beli</label>
-                        <input type="number" placeholder="Enter amount" name="harga_beli"
+                        <input type="number" placeholder="Enter amount" required name="harga_beli"
                             class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     </div>
                     <div>
                         <label class="text-sm font-medium block mb-1 text-green-600">Harga Jual</label>
-                        <input type="number" placeholder="Enter amount" name="harga_jual"
+                        <input type="number" placeholder="Enter amount" required name="harga_jual"
                             class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     </div>
 

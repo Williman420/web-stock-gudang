@@ -11,7 +11,7 @@
 
 <body class="bg-gray-100 text-gray-800 h-screen overflow-hidden">
 
-    <div class="flex h-full">
+    <div class="flex h-full overflow-auto"  >
         <!-- Sidebar (fixed width) -->
         <?php include '../component/sidebar.php'; ?>
 
@@ -31,7 +31,7 @@
                 </div>
             </div>
 
-            <main class="min-w-fit min-h-full">
+            <main class="min-w-fit min-h-full ">
                 <div class="flex w-full h-full">
                     <?php
                     include 'db_connect.php';
@@ -40,7 +40,7 @@
                     foreach ($data as $d) :
                     ?>
                         <div class="bg-white shadow-md rounded-lg overflow-hidden w-full h-full">
-                            <img src="https://via.placeholder.com/300x200" alt="Product Image" class="w-full h-48 object-cover">
+                            <img src="<?php echo $d['gambar_produk']; ?>" alt="Gambar Produk">
                             <div class="p-4">
                                 <div class="flex items-center justify-between">
                                     <h3 class="text-lg font-bold"><?= $d['kode_produk'] ?></h3>
@@ -58,12 +58,12 @@
                                         <h3 class="text-m font-bold text-green-600">Harga jual = <?= $d['harga_beli'] ?></h3>
                                     </div>
                                     <div class="flex gap-2">
-                                        <a href="">
+                                        <a href="edit_produk.php?id_produk=<?= $d['id_produk'] ?>">
                                             <button class="p-5 bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
                                                 Edit
                                             </button>
                                         </a>
-                                        <a href="">
+                                        <a href="deleteProduk.php?id_produk=<?= $d['id_produk'] ?>">
                                             <button class="p-5 bg-red-400 text-white py-2 rounded hover:bg-red-500">
                                                 Hapus
                                             </button>
