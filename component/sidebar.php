@@ -1,7 +1,7 @@
 <aside class=" h-screen w-64 bg-white border-r">
     <div class="p-6 font-bold text-xl flex items-center gap-2">
         <div class="bg-black text-white w-8 h-8 flex items-center justify-center rounded-full">C</div>
-        COOL ADMIN
+        NIGGA ADMIN
     </div>
 
     <nav class="flex flex-col space-y-2 px-6">

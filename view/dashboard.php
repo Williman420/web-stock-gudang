@@ -44,7 +44,7 @@
             </div>
             <div class="bg-gradient-to-br from-green-400 to-teal-500 text-white p-6 rounded-lg shadow-md">
                 <i class="fa-solid fa-cart-shopping text-3xl mb-2"></i>
-                <h3 class="text-3xl font-bold">1,303,678</h3>
+                <h3 class="text-3xl font-bold">1,103,678</h3>
                 <p>items sold</p>
             </div>
             <div class="bg-gradient-to-br from-pink-400 to-orange-500 text-white p-6 rounded-lg shadow-md">
