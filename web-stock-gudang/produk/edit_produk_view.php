@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Product</title>
+    <title>Edit Product</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
@@ -70,7 +70,7 @@
             <br>
             <div class="flex justify-between items-center mb-4">
               <button class="p-3 bg-blue-600 text-white rounded hover:bg-blue-700">
-                  Add Product
+                  Save Changes
               </button>
             </div>
         </div>

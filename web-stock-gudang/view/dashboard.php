@@ -48,12 +48,12 @@
         <p>suppliers</p>
       </div>
       <div class="bg-gradient-to-br from-green-400 to-teal-500 text-white p-6 rounded-lg shadow-md transform hover:scale-105 transition duration-300">
-        <i class="fa-solid fa-cart-shopping text-3xl mb-2"></i>
+        <i class="fa-solid fa-truck-ramp-box text-3xl mb-2"></i>
         <h3 class="text-3xl font-bold">1,086</h3>
         <p>stock in</p>
       </div>
       <div class="bg-gradient-to-br from-pink-400 to-orange-500 text-white p-6 rounded-lg shadow-md transform hover:scale-105 transition duration-300">
-        <i class="fa fa-th-large text-3xl mb-2"></i>
+        <i class="fa-solid fa-box text-3xl mb-2"></i>
         <h3 class="text-3xl font-bold">3,688</h3>
         <p>total stock</p>
       </div>
@@ -128,7 +128,7 @@
           <div class="text-base font-semibold">Bali</div>
         </div>
         <div class="text-right">
-          <div class="text-sm text-gray-500">Telephone:</div>
+          <div class="text-sm text-gray-500">Phone:</div>
           <div class="text-base font-semibold">+123456789</div>
         </div>
         <div class="text-right">
@@ -137,7 +137,6 @@
         </div>
       </div>
 
-      <!-- Germany -->
       <div class="flex items-center justify-between py-4 border-t border-gray-200">
         <div class="flex items-center space-x-3 w-48">
           <img src="https://flagcdn.com/id.svg" class="w-6 h-6 rounded-sm" />
@@ -155,7 +154,7 @@
           <div class="text-base font-semibold">Bali</div>
         </div>
         <div class="text-right">
-          <div class="text-sm text-gray-500">Telephone:</div>
+          <div class="text-sm text-gray-500">Phone:</div>
           <div class="text-base font-semibold">+123456789</div>
         </div>
         <div class="text-right">
@@ -164,7 +163,6 @@
         </div>
       </div>
 
-      <!-- Great Britain -->
       <div class="flex items-center justify-between py-4 border-t border-gray-200">
         <div class="flex items-center space-x-3 w-48">
           <img src="https://flagcdn.com/id.svg" class="w-6 h-6 rounded-sm" />
@@ -182,7 +180,7 @@
           <div class="text-base font-semibold">Bali</div>
         </div>
         <div class="text-right">
-          <div class="text-sm text-gray-500">Telephone:</div>
+          <div class="text-sm text-gray-500">Phone:</div>
           <div class="text-base font-semibold">+123456789</div>
         </div>
         <div class="text-right">
@@ -191,7 +189,6 @@
         </div>
       </div>
 
-      <!-- Brazil -->
       <div class="flex items-center justify-between py-4 border-t border-gray-200">
         <div class="flex items-center space-x-3 w-48">
           <img src="https://flagcdn.com/id.svg" class="w-6 h-6 rounded-sm" />
@@ -209,7 +206,7 @@
           <div class="text-base font-semibold">Bali</div>
         </div>
         <div class="text-right">
-          <div class="text-sm text-gray-500">Telephone:</div>
+          <div class="text-sm text-gray-500">Phone:</div>
           <div class="text-base font-semibold">+123456789</div>
         </div>
         <div class="text-right">

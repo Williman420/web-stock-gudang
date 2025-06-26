@@ -100,7 +100,14 @@
             </div>
 
            <div class="container">
-              <h2 class="text-2xl font-semibold">Stock Keluar</h2>
+              <div class="flex justify-between items-center mb-4">
+                <h2 class="text-2xl font-semibold">Stock Keluar</h2>
+                  <a href="tambah_stok_keluar_view.php">
+                    <button class="p-3 bg-blue-600 text-white rounded hover:bg-blue-700">
+                      Add Stock Keluar
+                    </button>
+                  </a>
+              </div>
               <br>
               <div class="table-container">
                 <table>
@@ -117,16 +124,16 @@
                         </tr>
                     </thead
                     <tbody>
-                      <tr><td>PRD001</td><td>SP001</td><td>Product 1</td><td>33</td><td>2024/11/28</td><td>IDR 2.000.000</td><td class="p-3"><button class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td><td class="p-3"><button class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td></tr>
-                      <tr><td>PRD002</td><td>SP002</td><td>Product 2</td><td>47</td><td>2024/10/09</td><td>IDR 2.000.000</td><td class="p-3"><button class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td><td class="p-3"><button class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td></tr>
-                      <tr><td>PRD003</td><td>SP003</td><td>Product 3</td><td>66</td><td>2023/01/12</td><td>IDR 2.000.000</td><td class="p-3"><button class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td><td class="p-3"><button class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td></tr>
-                      <tr><td>PRD004</td><td>SP004</td><td>Product 4</td><td>41</td><td>2024/10/13</td><td>IDR 2.000.000</td><td class="p-3"><button class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td><td class="p-3"><button class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td></tr>
-                      <tr><td>PRD005</td><td>SP005</td><td>Product 5</td><td>28</td><td>2025/06/07</td><td>IDR 2.000.000</td><td class="p-3"><button class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td><td class="p-3"><button class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td></tr>
-                      <tr><td>PRD006</td><td>SP006</td><td>Product 6</td><td>61</td><td>2024/12/02</td><td>IDR 2.000.000</td><td class="p-3"><button class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td><td class="p-3"><button class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td></tr>
-                      <tr><td>PRD007</td><td>SP007</td><td>Product 7</td><td>38</td><td>2024/05/03</td><td>IDR 2.000.000</td><td class="p-3"><button class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td><td class="p-3"><button class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td></tr>
-                      <tr><td>PRD008</td><td>SP008</td><td>Product 8</td><td>21</td><td>2024/12/12</td><td>IDR 2.000.000</td><td class="p-3"><button class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td><td class="p-3"><button class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td></tr>
-                      <tr><td>PRD009</td><td>SP009</td><td>Product 9</td><td>46</td><td>2025/12/06</td><td>IDR 2.000.000</td><td class="p-3"><button class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td><td class="p-3"><button class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td></tr>
-                      <tr><td>PRD010</td><td>SP010</td><td>Product 10</td><td>22</td><td>2025/03/29</td><td>IDR 2.000.000</td><td class="p-3"><button class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td><td class="p-3"><button class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td></tr>
+                      <tr><td>PRD001</td><td>SP001</td><td>Product 1</td><td>33</td><td>2024/11/28</td><td>IDR 2.000.000</td><td class="p-3"><button onclick="window.location.href='../stok_keluar/edit_stok_keluar_view.php'" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td><td class="p-3"><button onclick="deleteProduct('PRD001')" class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td></tr>
+                      <tr><td>PRD002</td><td>SP002</td><td>Product 2</td><td>47</td><td>2024/10/09</td><td>IDR 2.000.000</td><td class="p-3"><button onclick="window.location.href='../stok_keluar/edit_stok_keluar_view.php'" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td><td class="p-3"><button onclick="deleteProduct('PRD002')" class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td></tr>
+                      <tr><td>PRD003</td><td>SP003</td><td>Product 3</td><td>66</td><td>2023/01/12</td><td>IDR 2.000.000</td><td class="p-3"><button onclick="window.location.href='../stok_keluar/edit_stok_keluar_view.php'" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td><td class="p-3"><button onclick="deleteProduct('PRD003')" class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td></tr>
+                      <tr><td>PRD004</td><td>SP004</td><td>Product 4</td><td>41</td><td>2024/10/13</td><td>IDR 2.000.000</td><td class="p-3"><button onclick="window.location.href='../stok_keluar/edit_stok_keluar_view.php'" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td><td class="p-3"><button onclick="deleteProduct('PRD004')" class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td></tr>
+                      <tr><td>PRD005</td><td>SP005</td><td>Product 5</td><td>28</td><td>2025/06/07</td><td>IDR 2.000.000</td><td class="p-3"><button onclick="window.location.href='../stok_keluar/edit_stok_keluar_view.php'" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td><td class="p-3"><button onclick="deleteProduct('PRD005')" class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td></tr>
+                      <tr><td>PRD006</td><td>SP006</td><td>Product 6</td><td>61</td><td>2024/12/02</td><td>IDR 2.000.000</td><td class="p-3"><button onclick="window.location.href='../stok_keluar/edit_stok_keluar_view.php'" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td><td class="p-3"><button onclick="deleteProduct('PRD006')" class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td></tr>
+                      <tr><td>PRD007</td><td>SP007</td><td>Product 7</td><td>38</td><td>2024/05/03</td><td>IDR 2.000.000</td><td class="p-3"><button onclick="window.location.href='../stok_keluar/edit_stok_keluar_view.php'" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td><td class="p-3"><button onclick="deleteProduct('PRD007')" class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td></tr>
+                      <tr><td>PRD008</td><td>SP008</td><td>Product 8</td><td>21</td><td>2024/12/12</td><td>IDR 2.000.000</td><td class="p-3"><button onclick="window.location.href='../stok_keluar/edit_stok_keluar_view.php'" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td><td class="p-3"><button onclick="deleteProduct('PRD008')" class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td></tr>
+                      <tr><td>PRD009</td><td>SP009</td><td>Product 9</td><td>46</td><td>2025/12/06</td><td>IDR 2.000.000</td><td class="p-3"><button onclick="window.location.href='../stok_keluar/edit_stok_keluar_view.php'" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td><td class="p-3"><button onclick="deleteProduct('PRD009')" class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td></tr>
+                      <tr><td>PRD010</td><td>SP010</td><td>Product 10</td><td>22</td><td>2025/03/29</td><td>IDR 2.000.000</td><td class="p-3"><button onclick="window.location.href='../stok_keluar/edit_stok_keluar_view.php'" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td><td class="p-3"><button onclick="deleteProduct('PRD010')" class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td></tr>
                     </tbody>
                 </table>
             </div>
@@ -142,5 +149,14 @@
         </div>
     </div>
 </div>
+<script>
+  function deleteProduct(productId) {
+    const confirmed = confirm("Apakah Anda yakin ingin menghapus stock ini?");
+    if (confirmed) {
+      alert("Produk dengan ID " + productId + " telah dihapus.");
+      // window.location.href = `/delete/${productId}`;
+    }
+  }
+</script>
 </body>
 </html>
