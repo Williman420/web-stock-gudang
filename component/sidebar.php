@@ -14,19 +14,19 @@
             <i class="fa-solid fa-box"></i>
             <p>Produk</p>
         </a>
-        <a href="#" class=" w-full px-4 py-3 rounded-md flex items-center gap-3 text-black font-semibold hover:bg-gray-100 hover:text-blue-700">
+        <a href="../stok_saat_ini/total_stok_view.php" class=" w-full px-4 py-3 rounded-md flex items-center gap-3 text-black font-semibold hover:bg-gray-100 hover:text-blue-700">
             <i class="fa-solid fa-boxes-stacked"></i>
             <p>Total Stok</p>
         </a>
-        <a href="#" class=" w-full px-4 py-3 rounded-md flex items-center gap-3 text-black font-semibold hover:bg-gray-100 hover:text-blue-700">
+        <a href="../stokMasuk/stok_masuk_view.php" class=" w-full px-4 py-3 rounded-md flex items-center gap-3 text-black font-semibold hover:bg-gray-100 hover:text-blue-700">
             <i class="fa-solid fa-truck-ramp-box"></i>
             <p>Stok Masuk</p>
         </a>
-        <a href="#" class=" w-full px-4 py-3 rounded-md flex items-center gap-3 text-black font-semibold hover:bg-gray-100 hover:text-blue-700">
+        <a href="../stok_keluar/stok_keluar_view.php" class=" w-full px-4 py-3 rounded-md flex items-center gap-3 text-black font-semibold hover:bg-gray-100 hover:text-blue-700">
             <i class="fa-solid fa-truck-fast"></i>
             <p>Stok Keluar</p>
         </a>
-        <a href="#" class=" w-full px-4 py-3 rounded-md flex items-center gap-3 text-black font-semibold hover:bg-gray-100 hover:text-blue-700">
+        <a href="../pelanggan/"class ="w-full px-4 py-3 rounded-md flex items-center gap-3 text-black font-semibold hover:bg-gray-100 hover:text-blue-700">
             <i class="fa-solid fa-user"></i>
             <p>Suplier</p>
         </a>
