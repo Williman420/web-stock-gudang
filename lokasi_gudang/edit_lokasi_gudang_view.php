@@ -14,7 +14,7 @@
     <div class="flex h-full w-full overflow-hidden">
         <?php include '../component/sidebar.php'; ?>
 
-        <div class="ml-64 flex flex-col w-full h-full overflow-y-auto px-5 py-6 ">
+        <div class="flex flex-col w-full h-full overflow-y-auto px-5 py-6 ">
             <div class="flex w-full  justify-between mb-6">
                 <a href="../lokasi_gudang/lokasi_gudang_view.php">
                     <button class="p-5 bg-blue-600 text-white py-2 rounded hover:bg-blue-700">

@@ -16,7 +16,7 @@
         <?php include '../component/sidebar.php'; ?>
 
         <!-- Main content (scrollable only here) -->
-        <div class="flex-1 p-6 space-y-6 overflow-auto">
+        <div class="flex-1 ml-64 p-6 space-y-6 overflow-auto">
             <div class="w-full h-fit flex justify-between mb-6">
                 <div class="flex items-center gap-2">
                     <input type="text" placeholder="Search for datas & reports..." class="px-4 py-2 rounded-md border w-96" />

@@ -16,7 +16,7 @@
         <?php include '../component/sidebar.php'; ?>
 
         <!-- Main Content (scrollable) -->
-        <div class="flex-1  px-5 py-6">
+        <div class="flex-1 ml-64 px-5 py-6">
             <div class="w-full flex justify-between mb-6">
                 <a href="produk_view.php">
                     <button class="p-5 bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
