@@ -56,15 +56,30 @@
                             <input type="text" placeholder="YYYY/MM/DD" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
                         </div>
                     </div>
-            </div>
-            <br>
-            <div class="flex justify-between items-center mb-4">
-                <button class="p-3 bg-blue-600 text-white rounded hover:bg-blue-700">
-                    Add Stock
-                 </button>
+                    <select name="supplier_id" class="w-full p-2 border rounded">
+                        <option value="">-- Select Supplier --</option>
+
+                        <?php
+                        include 'db_connection.php';
+                        $data = mysqli_query($connection, "SELECT * FROM supplier");
+                        if (!$data) {
+                            die("Query Error: " . mysqli_error($connection));
+                        }
+                        foreach ($data as $d) :
+                        ?>
+                            <option value=<? $d['nama_supplier'] ?>> <? $d['nama_supplier'] ?></option>
+                        <?php endforeach ?>
+                    </select>
+
+                </form>
+                <br>
+                <div class="flex justify-between items-center mb-4">
+                    <button class="p-3 bg-blue-600 text-white rounded hover:bg-blue-700">
+                        Add Stock
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
 
 </body>
 

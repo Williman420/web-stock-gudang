@@ -29,7 +29,7 @@
                 </div>
             </div>
             <?php
-            include 'db_connect.php';
+            include 'db_connection.php';
             $id_produk = $_GET['id_produk'];
             $data = mysqli_query($connection, "SELECT * FROM produk WHERE id_produk = '$id_produk'");
             while ($d = mysqli_fetch_array($data)) {

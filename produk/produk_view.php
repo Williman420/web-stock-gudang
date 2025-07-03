@@ -43,7 +43,7 @@
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     <?php
-                    include 'db_connect.php';
+                    include 'db_connection.php';
                     $data = mysqli_query($connection, "SELECT * FROM produk");
                     foreach ($data as $d) :
                     ?>

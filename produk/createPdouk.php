@@ -1,5 +1,5 @@
 <?php
-include "db_connect.php";
+include "db_connection.php";
 
 
 $kode_produk = $_POST["kode_produk"];

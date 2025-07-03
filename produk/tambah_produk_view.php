@@ -35,14 +35,12 @@
                             class="cursor-pointer flex flex-col w-1/2 h-1/2 bg-gray-100 p-5 rounded-lg items-center justify-center">
                             <i class="fa-solid fa-plus text-2xl mb-2"></i>
                             <p>Add an Image</p>
-                            <input type="file" class="hidden" name="gambar_produk" required/>
+                            <input type="file" class="hidden" name="gambar_produk" required />
                         </label>
                     </div>
-
-
                     <div>
                         <label class="text-sm font-medium block mb-1">Kode Produk *</label>
-                        <input type="text" placeholder="PRD001" required name="kode_produk" 
+                        <input type="text" placeholder="PRD001" required name="kode_produk"
                             class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     </div>
                     <div>

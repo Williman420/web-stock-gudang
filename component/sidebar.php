@@ -23,7 +23,7 @@
             <i class="fa-solid fa-truck-fast"></i>
             <p>Stock Keluar</p>
         </a>
-        <a href="../pelanggan/pelanggan_view.php" class=" w-full px-4 py-3 rounded-md flex items-center gap-3 text-black font-semibold hover:bg-gray-100 hover:text-blue-700">
+        <a href="../supplier/supplier_view.php" class=" w-full px-4 py-3 rounded-md flex items-center gap-3 text-black font-semibold hover:bg-gray-100 hover:text-blue-700">
             <i class="fa-solid fa-user"></i>
             <p>Supplier</p>
         </a>

@@ -34,7 +34,7 @@
             <main class="min-w-fit min-h-full ">
                 <div class="flex w-full h-full">
                     <?php
-                    include 'db_connect.php';
+                    include 'db_connection.php';
                     $id = $_GET['kode_produk'];
                     $data = mysqli_query($connection, "SELECT * FROM produk where kode_produk = '$id'");
                     foreach ($data as $d) :

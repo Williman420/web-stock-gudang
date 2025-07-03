@@ -1,5 +1,5 @@
 <?php
-include "db_connect.php";
+include "db_connection.php";
 $id_produk = $_POST['id_produk'];
 $kode_produk = $_POST['kode_produk'];
 $nama_produk = $_POST['nama_produk'];

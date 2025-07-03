@@ -7,7 +7,7 @@ $telepon = $_POST['telepon'];
 $email = $_POST['email'];
 $kontak_person = $_POST['kontak_person'];
 
-mysqli_query($connection, "update supplier set nama_supplier = '$nama_supplier', 
-alamat ='$alamat', telepon = '$telepon', email ='$email', kontak_person= '$kontak_person' where id_supplier = '$id_supplier'");
+mysqli_query($connection, "UPDATE supplier SET nama_supplier = '$nama_supplier', 
+alamat ='$alamat', telepon = '$telepon', email ='$email', kontak_person ='$kontak_person' WHERE id_supplier = '$id_supplier'");
 
-header("location:supplierView.php");
+header("location:supplier_view.php");

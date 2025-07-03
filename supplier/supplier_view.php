@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Total Stock</title>
+  <title>Supplier</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
@@ -102,64 +102,48 @@
 
       <div class="container">
         <div class="flex justify-between items-center mb-4">
-          <h2 class="text-2xl font-semibold">Total Stock</h2>
-
+          <h2 class="text-2xl font-semibold">Our Supplier</h2>
+          <a href="tambah_supplier_view.php">
+            <button class="p-3 bg-blue-600 text-white rounded hover:bg-blue-700">
+              Add Supplier
+            </button>
+          </a>
         </div>
         <br>
         <div class="table-container">
           <table>
             <thead>
               <tr>
-                <th>ID Product</th>
-                <th>Product Name</th>
-                <th>Location</th>
-                <th>Stock Amount</th>
-                <th>Date of Entry</th>
-                <th>Date of Exit</th>
+                <th>ID Supplier</th>
+                <th>Supplier Name</th>
+                <th>Address</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>contact person</th>
+                <th>Edit</th>
+                <th>Delete</th>
               </tr>
             </thead>
             <tbody>
               <?php
               include 'db_connection.php';
-              $query = "
-    SELECT 
-        s.id_stok,
-        s.jumlah_stok,
-        s.tanggal_diperbarui,
-        s.tanggal_terakhir_masuk,
-        p.kode_produk,
-        p.nama_produk,
-        p.stok_minimal,
-        l.nama_lokasi
-    FROM stok_saat_ini s
-    JOIN produk p ON s.id_produk = p.id_produk
-    JOIN lokasi_gudang l ON s.id_lokasi = l.id_lokasi
-";
-
-              // Run query
-              $data = mysqli_query($connection, $query);
-
-              // Check for error
-              if (!$data) {
-                die("Query Error: " . mysqli_error($connection));
-              }
+              $data = mysqli_query($connection, 'SELECT * FROM supplier');
 
               foreach ($data as $d) :
               ?>
                 <tr>
-                  <td><?= $d['kode_produk'] ?></td>
-                  <td><?= $d['nama_produk'] ?></td>
-                  <td><?= $d['nama_lokasi'] ?></td>
-                  <td class="<?= $d['jumlah_stok'] < $d['stok_minimal'] ? 'text-red-600 font-semibold' : 'text-gray-800' ?>">
-                    <?= $d['jumlah_stok'] ?>
-                  </td>
-                  <td><?= date('Y/m/d', strtotime($d['tanggal_terakhir_masuk'])) ?></td>
-                  <td><?= date('Y/m/d', strtotime($d['tanggal_diperbarui'])) ?></td>
-
+                  <td><?= $d['id_supplier'] ?></td>
+                  <td><?= $d['nama_supplier'] ?></td>
+                  <td><?= $d['alamat'] ?></td>
+                  <td><?= $d['telepon'] ?></td>
+                  <td><?= $d['email'] ?></td>
+                  <td><?= $d['kontak_person'] ?></td>
+                  <td class="p-3"><button onclick="window.location.href='../supplier/edit_supplier_view.php?id_supplier=<?= $d['id_supplier'] ?>'" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td>
+                  <td class="p-3"><button onclick="deleteSupplier('SP001')" class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td>
                 </tr>
-              <?php endforeach ?>
+              <?php endforeach;
+              ?>
             </tbody>
-
           </table>
         </div>
 
@@ -174,7 +158,16 @@
       </div>
     </div>
   </div>
+  <script>
+    function deleteSupplier(supplierId) {
+      const confirmed = confirm("Apakah Anda yakin ingin menghapus supplier ini?");
+      if (confirmed) {
 
+        alert("Supplier dengan ID " + supplierId + " telah dihapus.");
+        window.location.href = '../supplier/delete.php?id_supplier=<?= $d['id_supplier'] ?>';
+      }
+    }
+  </script>
 </body>
 
 </html>
