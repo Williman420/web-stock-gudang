@@ -6,7 +6,7 @@ $nama_lokasi = $_POST["nama_lokasi"];
 $kapasitas = $_POST["kapasitas"];
 $deskripsi = $_POST["deskripsi"];
 
-mysqli_query($connection, "INSERT INTO lokasi_gudang (kode_lokasi, nama_lokasi, kapasitas, deskripsi) 
-                           VALUES ('$kode_lokasi', '$nama_lokasi', $kapasitas, '$deskripsi')");
+mysqli_query($connection, "INSERT INTO lokasi_gudang (kode_lokasi, nama_lokasi, kapasitas, deskripsi)
+VALUES ('$kode_lokasi', '$nama_lokasi', $kapasitas, '$deskripsi')");
 
-header("location:listLokasi.php");
+header("location:lokasi_gudang_view.php");
