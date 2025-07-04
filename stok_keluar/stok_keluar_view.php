@@ -120,9 +120,10 @@
                 <th>Nama Pelanggan</th>
                 <th>Product Name</th>
                 <th>location</th>
-                <th>Stock Amount</th>
-                <th>Date of Entry</th>
-                <th>Date of Entry</th>
+                <th>Jumlah Keluar</th>
+                <th>Tipe Keluar</th>
+                <th>Keterangan</th>
+                <th>Tanggal Keluar</th>
               </tr>
             </thead>
             <tbody>
@@ -134,6 +135,7 @@
     p.nama_produk,
     l.nama_lokasi,
     sk.jumlah_keluar,
+    sk.keterangan,
     sk.tipe_keluar,
     DATE_FORMAT(sk.tanggal_keluar, '%Y/%m/%d') AS date_of_exit,
     sk.id_stok_keluar
@@ -155,8 +157,10 @@ FROM
                   <td> <?= $d['nama_produk'] ?> </td>
                   <td> <?= $d['nama_lokasi'] ?> </td>
                   <td> <?= $d['jumlah_keluar'] ?> </td>
-                  <td> <?= $d['date_of_exit'] ?> </td>
                   <td> <?= $d['tipe_keluar'] ?> </td>
+                  <td> <?= $d['keterangan'] ?> </td>
+                  <td> <?= $d['date_of_exit'] ?> </td>
+                  
                 </tr>
               <?php endforeach; ?>
             </tbody>
