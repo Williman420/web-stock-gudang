@@ -163,7 +163,7 @@
       const confirmed = confirm("Apakah Anda yakin ingin menghapus lokasi ini?");
       if (confirmed) {
         alert("Lokasi dengan ID " + locationId + " telah dihapus.");
-        // window.location.href = `/delete/${locationId}`;
+        window.location.href = '../lokasi_gudang/deleteLokasi.php?id_lokasi=' + locationId;
       }
     }
   </script>
