@@ -139,7 +139,8 @@
                   <td><?= $d['email'] ?></td>
                   <td><?= $d['kontak_person'] ?></td>
                   <td class="p-3"><button onclick="window.location.href='../supplier/edit_supplier_view.php?id_supplier=<?= $d['id_supplier'] ?>'" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td>
-                  <td class="p-3"><button onclick="deleteSupplier('SP001')" class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td>
+                  <td class="p-3"><button onclick="deleteSupplier('<?= $d['id_supplier'] ?>')" class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td>
+
                 </tr>
               <?php endforeach;
               ?>
@@ -162,9 +163,7 @@
     function deleteSupplier(supplierId) {
       const confirmed = confirm("Apakah Anda yakin ingin menghapus supplier ini?");
       if (confirmed) {
-
-        alert("Supplier dengan ID " + supplierId + " telah dihapus.");
-        window.location.href = '../supplier/delete.php?id_supplier=<?= $d['id_supplier'] ?>';
+        window.location.href = '../supplier/delete.php?id_supplier=' + supplierId;
       }
     }
   </script>

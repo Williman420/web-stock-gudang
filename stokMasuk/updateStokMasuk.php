@@ -25,4 +25,3 @@ keterangan = '$keterangan'
 WHERE id_stok_masuk = $id_stok_masuk");
 
 header("location: listStokMasuk.php");
-?>

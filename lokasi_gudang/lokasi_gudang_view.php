@@ -118,116 +118,55 @@
                 <th>ID Location</th>
                 <th>Location</th>
                 <th>Capacity</th>
+                <th>Kapasitas</th>
                 <th>Description</th>
                 <th>Edit</th>
                 <th>Delete</th>
               </tr>
-            </thead
-              <body>
-            <tr>
-              <td>L001</td>
-              <td>Tokyo</td>
-              <td>500</td>
-              <td>description</td>
-              <td class="p-3"><button onclick="window.location.href='../lokasi_gudang/edit_lokasi_gudang_view.php'" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td>
-              <td class="p-3"><button onclick="deleteLocation('L001')" class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td>
-            </tr>
-            <tr>
-              <td>L002</td>
-              <td>London</td>
-              <td>500</td>
-              <td>description</td>
-              <td class="p-3"><button onclick="window.location.href='../lokasi_gudang/edit_lokasi_gudang_view.php'" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td>
-              <td class="p-3"><button onclick="deleteLocation('L002')" class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td>
-            </tr>
-            <tr>
-              <td>L003</td>
-              <td>San Francisco</td>
-              <td>500</td>
-              <td>description</td>
-              <td class="p-3"><button onclick="window.location.href='../lokasi_gudang/edit_lokasi_gudang_view.php'" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td>
-              <td class="p-3"><button onclick="deleteLocation('L003')" class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td>
-            </tr>
-            <tr>
-              <td>L004</td>
-              <td>London</td>
-              <td>500</td>
-              <td>description</td>
-              <td class="p-3"><button onclick="window.location.href='../lokasi_gudang/edit_lokasi_gudang_view.php'" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td>
-              <td class="p-3"><button onclick="deleteLocation('L004')" class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td>
-            </tr>
-            <tr>
-              <td>L005</td>
-              <td>San Francisco</td>
-              <td>500</td>
-              <td>description</td>
-              <td class="p-3"><button onclick="window.location.href='../lokasi_gudang/edit_lokasi_gudang_view.php'" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td>
-              <td class="p-3"><button onclick="deleteLocation('L004')" class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td>
-            </tr>
-            <tr>
-              <td>L006</td>
-              <td>New York</td>
-              <td>500</td>
-              <td>description</td>
-              <td class="p-3"><button onclick="window.location.href='../lokasi_gudang/edit_lokasi_gudang_view.php'" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td>
-              <td class="p-3"><button onclick="deleteLocation('L005')" class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td>
-            </tr>
-            <tr>
-              <td>L007</td>
-              <td>London</td>
-              <td>500</td>
-              <td>description</td>
-              <td class="p-3"><button onclick="window.location.href='../lokasi_gudang/edit_lokasi_gudang_view.php'" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td>
-              <td class="p-3"><button onclick="deleteLocation('L006')" class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td>
-            </tr>
-            <tr>
-              <td>L008</td>
-              <td>New York</td>
-              <td>500</td>
-              <td>description</td>
-              <td class="p-3"><button onclick="window.location.href='../lokasi_gudang/edit_lokasi_gudang_view.php'" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td>
-              <td class="p-3"><button onclick="deleteLocation('L007')" class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td>
-            </tr>
-            <tr>
-              <td>L009</td>
-              <td>New York</td>
-              <td>500</td>
-              <td>description</td>
-              <td class="p-3"><button onclick="window.location.href='../lokasi_gudang/edit_lokasi_gudang_view.php'" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td>
-              <td class="p-3"><button onclick="deleteLocation('L008')" class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td>
-            </tr>
-            <tr>
-              <td>L010</td>
-              <td>Edinburgh</td>
-              <td>500</td>
-              <td>description</td>
-              <td class="p-3"><button onclick="window.location.href='../lokasi_gudang/edit_lokasi_gudang_view.php'" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td>
-              <td class="p-3"><button onclick="deleteLocation('L009')" class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td>
-            </tr>
-</body>
-</table>
-</div>
+            </thead>
 
-<div class="pagination">
-  <a href="#" class="active">1</a>
-  <a href="#">2</a>
-  <a href="#">3</a>
-  <a href="#">4</a>
-  <a href="#">5</a>
-  <a href="#">Next</a>
-</div>
-</div>
-</div>
-</div>
-<script>
-  function deleteLocation(locationId) {
-    const confirmed = confirm("Apakah Anda yakin ingin menghapus lokasi ini?");
-    if (confirmed) {
-      alert("Lokasi dengan ID " + locationId + " telah dihapus.");
-      // window.location.href = `/delete/${locationId}`;
+            <body>
+              <?php
+              include 'db_connection.php';
+              $data = mysqli_query($connection, 'SELECT * FROM lokasi_gudang');
+
+              foreach ($data as $d) :
+              ?>
+                <tr>
+                  <td><?= $d['id_lokasi'] ?></td>
+                  <td><?= $d['kode_lokasi'] ?></td>
+                  <td><?= $d['nama_lokasi'] ?></td>
+                  <td><?= $d['kapasitas'] ?></td>
+                  <td><?= $d['deskripsi'] ?></td>
+                  <td class="p-3"><button onclick="window.location.href='../lokasi_gudang/edit_lokasi_gudang_view.php?id_lokasi=<?= $d['id_lokasi'] ?>'" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td>
+                  <td class="p-3"><button onclick="deleteLokasi_gudang('<?= $d['id_lokasi'] ?>')" class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td>
+                </tr>
+              <?php endforeach;
+              ?>
+            </body>
+          </table>
+        </div>
+
+        <div class="pagination">
+          <a href="#" class="active">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a href="#">Next</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function deleteLokasi_gudang(locationId) {
+      const confirmed = confirm("Apakah Anda yakin ingin menghapus lokasi ini?");
+      if (confirmed) {
+        alert("Lokasi dengan ID " + locationId + " telah dihapus.");
+        // window.location.href = `/delete/${locationId}`;
+      }
     }
-  }
-</script>
+  </script>
 </body>
 
 </html>
