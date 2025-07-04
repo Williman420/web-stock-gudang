@@ -115,9 +115,9 @@
             <thead>
               <tr>
                 <th>ID customer</th>
-                <th>customer Name</th>
-                <th>Address</th>
-                <th>Phone</th>
+                <th>Nama Pelanggan</th>
+                <th>Alamat</th>
+                <th>Telepon</th>
                 <th>Email</th>
                 <th>Edit</th>
                 <th>Delete</th>
@@ -136,8 +136,8 @@
                   <td><?= $d['alamat'] ?></td>
                   <td><?= $d['telepon'] ?></td>
                   <td><?= $d['email'] ?></td>
-                  <td class="p-3"><button onclick="window.location.href='../pelanggan/edit_pelanggan_view.php?id_pelanggan=<?= $d['id_pelanggan'] ?>'" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td>
-                  <td class="p-3"><button onclick="deletePelanggan('<?= $d['id_pelanggan'] ?>')" class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td>
+                  <td class="p-3"><button onclick="window.location.href='../pelanggan/edit_pelanggan_view.php?id_pelanggan=<?= $d['id_pelanggan'] ?>'" class="w-full bg-blue-700 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td>
+                  <td class="p-3"><button onclick="deletePelanggan('<?= $d['id_pelanggan'] ?>')" class="w-full bg-red-700 text-white py-2 rounded hover:bg-red-700 flex justify-center items-center"><i class="fa fa-trash"></i></button></td>
                 </tr>
               <?php endforeach;
               ?>

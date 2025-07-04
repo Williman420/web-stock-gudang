@@ -121,6 +121,7 @@
                 <th>Product Name</th>
                 <th>location</th>
                 <th>Stock Amount</th>
+                <th>Status</th>
                 <th>Date of Entry</th>
               </tr>
             </thead>
@@ -133,6 +134,7 @@
     p.nama_produk,
     l.nama_lokasi,
     sm.jumlah_masuk,
+    sm.keterangan,
     DATE_FORMAT(sm.tanggal_masuk, '%Y/%m/%d') AS date_of_entry,
     sm.id_stok_masuk
 FROM
@@ -153,6 +155,7 @@ FROM
                   <td> <?= $d['nama_produk'] ?> </td>
                   <td> <?= $d['nama_lokasi'] ?> </td>
                   <td> <?= $d['jumlah_masuk'] ?> </td>
+                  <td> <?= $d['keterangan'] ?> </td>
                   <td> <?= $d['date_of_entry'] ?> </td>
                 </tr>
               <?php endforeach; ?>
