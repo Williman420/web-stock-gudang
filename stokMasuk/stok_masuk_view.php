@@ -115,13 +115,14 @@
           <table>
             <thead>
               <tr>
-                <th>ID Stock Masuk</th>
-                <th>ID Product</th>
+                <th>ID</th>
+                <th>Kode Product</th>
                 <th>ID Supplier</th>
                 <th>Product Name</th>
                 <th>location</th>
                 <th>Stock Amount</th>
-                <th>Status</th>
+                <th>Reference Code</th>
+                <th>Stock Input Details</th>
                 <th>Date of Entry</th>
               </tr>
             </thead>
@@ -135,6 +136,7 @@
     l.nama_lokasi,
     sm.jumlah_masuk,
     sm.keterangan,
+    sm.nomor_referensi,
     DATE_FORMAT(sm.tanggal_masuk, '%Y/%m/%d') AS date_of_entry,
     sm.id_stok_masuk
 FROM
@@ -155,6 +157,7 @@ FROM
                   <td> <?= $d['nama_produk'] ?> </td>
                   <td> <?= $d['nama_lokasi'] ?> </td>
                   <td> <?= $d['jumlah_masuk'] ?> </td>
+                  <td> <?= $d['nomor_referensi'] ?> </td>
                   <td> <?= $d['keterangan'] ?> </td>
                   <td> <?= $d['date_of_entry'] ?> </td>
                 </tr>

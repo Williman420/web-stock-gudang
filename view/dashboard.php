@@ -106,11 +106,10 @@
         <section class="mt-8 bg-white rounded-2xl shadow-md p-6 w-full">
             <div class="flex justify-between items-center mb-4">
                 <h2 class="text-xl font-semibold text-gray-800 mb-6">Our Supplier</h2>
-                <a href="../pelanggan/pelanggan_view.php">
+                <a href="../supplier/supplier_view.php">
                     <button class="p-3 bg-blue-600 text-white rounded hover:bg-blue-700">View Details</button>
                 </a>
             </div>
-
             <div class="flex items-center justify-between py-4 border-t border-gray-200 first:border-t-0">
                 <div class="flex items-center space-x-3 w-48">
                     <img src="https://flagcdn.com/id.svg" class="w-6 h-6 rounded-sm" />

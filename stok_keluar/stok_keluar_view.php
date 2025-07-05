@@ -115,14 +115,15 @@
           <table>
             <thead>
               <tr>
-                <th>ID Stock keluar</th>
+                <th>ID</th>
                 <th>Kode Product</th>
                 <th>Nama Pelanggan</th>
                 <th>Product Name</th>
                 <th>location</th>
                 <th>Jumlah Keluar</th>
                 <th>Tipe Keluar</th>
-                <th>Keterangan</th>
+                <th>Reference Code</th>
+                <th>Stock Input Details</th>
                 <th>Tanggal Keluar</th>
               </tr>
             </thead>
@@ -137,6 +138,7 @@
     sk.jumlah_keluar,
     sk.keterangan,
     sk.tipe_keluar,
+    sk.nomor_referensi,
     DATE_FORMAT(sk.tanggal_keluar, '%Y/%m/%d') AS date_of_exit,
     sk.id_stok_keluar
 FROM
@@ -158,6 +160,7 @@ FROM
                   <td> <?= $d['nama_lokasi'] ?> </td>
                   <td> <?= $d['jumlah_keluar'] ?> </td>
                   <td> <?= $d['tipe_keluar'] ?> </td>
+                  <td> <?= $d['nomor_referensi'] ?> </td>
                   <td> <?= $d['keterangan'] ?> </td>
                   <td> <?= $d['date_of_exit'] ?> </td>
                   
