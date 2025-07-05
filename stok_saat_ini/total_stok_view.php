@@ -139,10 +139,6 @@
               // Run query
               $data = mysqli_query($connection, $query);
 
-              // Check for error
-              if (!$data) {
-                die("Query Error: " . mysqli_error($connection));
-              }
 
               foreach ($data as $d) :
               ?>
