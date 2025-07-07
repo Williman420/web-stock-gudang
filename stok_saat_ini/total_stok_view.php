@@ -2,13 +2,12 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Total Stock</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <style>
-    body {
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Total Stock</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>body {
       font-family: "Segoe UI", sans-serif;
       background-color: #f8f9fc;
       padding: 0px;
@@ -19,7 +18,7 @@
       background: #fff;
       border-radius: 8px;
       padding: 24px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
       max-width: 1200px;
       margin: auto;
     }
@@ -44,7 +43,7 @@
       background-color: #f8f9fc;
     }
 
-    td {
+    th, td {
       padding: 12px 16px;
       border: 1px solid #e3e6f0;
       text-align: left;
@@ -74,103 +73,103 @@
       background-color: #4e73df;
       color: #fff;
     }
-  </style>
+    </style>
 </head>
 
 <body class="bg-gray-100 text-gray-800 h-screen overflow-hidden">
 
-  <div class="flex h-full">
-    <!-- Sidebar -->
-    <?php include '../component/sidebar.php'; ?>
+    <div class="flex h-full">
+        <!-- Sidebar -->
+        <?php include '../component/sidebar.php'; ?>
 
-    <!-- Main content (scrollable only here) -->
-    <div class="ml-64 flex-1 p-6 space-y-6 overflow-auto">
-      <div class="w-full h-fit flex justify-between mb-6">
-        <div class="flex items-center gap-2">
-          <input type="text" placeholder="Search for datas & reports..." class="px-4 py-2 rounded-md border w-96" />
-          <button class="bg-blue-600 text-white px-4 py-2 rounded-md">
-            <i class="fa fa-search"></i>
-          </button>
+        <!-- Main content (scrollable only here) -->
+        <div class="ml-64 flex-1 p-6 space-y-6 overflow-auto">
+            <div class="w-full h-fit flex justify-between mb-6">
+                <div class="flex items-center gap-2">
+                    <input type="text" placeholder="Search for datas & reports..." class="px-4 py-2 rounded-md border w-96" />
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-md">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+                <div class="flex items-center gap-6">
+                    <div class="flex items-center gap-2">
+                      <button id="userButton" class="flex items-center space-x-2 focus:outline-none">
+                        <i class="fa-solid fa-user text-xl"></i>
+                        <span>Admin</span>
+                      </button>
+                      <div
+                        id="dropdownMenu"
+                        class="hidden absolute right-5 mt-20 w-20 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+                          <a
+                            href="login.php"
+                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                            Logout
+                          </a>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+              const userButton = document.getElementById('userButton');
+              const dropdownMenu = document.getElementById('dropdownMenu');
+
+              userButton.addEventListener('click', () => {
+                  dropdownMenu.classList.toggle('hidden');
+                });
+
+              // Optional: close dropdown if clicked outside
+              window.addEventListener('click', function (e) {
+                  if (!userButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                      dropdownMenu.classList.add('hidden');
+                    }
+                });
+            </script>
+
+            <div class="container">
+              <div class="flex justify-between items-center mb-4">
+                <h2 class="text-2xl font-semibold">Total Stock</h2>
+              </div>
+              <br>
+              <div class="table-container">
+                <table>
+                  <thead>
+                      <tr>
+                          <th>ID Stock</th>
+                          <th>ID Product</th>
+                          <th>ID Location</th>
+                          <th>Stock Amount</th>
+                          <th>Date of Entry</th>
+                          <th>Date of Exit</th>
+                          <th>Date Updated</th>
+                          <th>Edit</th>
+                        </tr>
+                    </thead
+                    <tbody>
+                      <tr><td>ST001</td><td>PRD001</td><td>L001</td><td>33</td><td>2024/11/28</td><td></td><td></td><td class="p-3"><button onclick="window.location.href='../stok_saat_ini/edit_stok_view.php'" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td>
+                      <tr><td>ST002</td><td>PRD002</td><td>L002</td><td>47</td><td>2024/10/09</td><td></td><td></td><td class="p-3"><button onclick="window.location.href='../stok_saat_ini/edit_stok_view.php'" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td>
+                      <tr><td>ST003</td><td>PRD003</td><td>L003</td><td>66</td><td>2023/01/12</td><td></td><td></td><td class="p-3"><button onclick="window.location.href='../stok_saat_ini/edit_stok_view.php'" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td>
+                      <tr><td>ST004</td><td>PRD004</td><td>L004</td><td>41</td><td>2024/10/13</td><td></td><td></td><td class="p-3"><button onclick="window.location.href='../stok_saat_ini/edit_stok_view.php'" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td>
+                      <tr><td>ST005</td><td>PRD005</td><td>L005</td><td>28</td><td>2025/06/07</td><td>2025/11/21</td><td></td><td class="p-3"><button onclick="window.location.href='../stok_saat_ini/edit_stok_view.php'" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td>
+                      <tr><td>ST006</td><td>PRD006</td><td>L006</td><td>61</td><td>2024/12/02</td><td></td><td></td><td class="p-3"><button onclick="window.location.href='../stok_saat_ini/edit_stok_view.php'" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td>
+                      <tr><td>ST007</td><td>PRD007</td><td>L007</td><td>38</td><td>2024/05/03</td><td></td><td></td><td class="p-3"><button onclick="window.location.href='../stok_saat_ini/edit_stok_view.php'" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td>
+                      <tr><td>ST008</td><td>PRD008</td><td>L008</td><td>21</td><td>2024/12/12</td><td>2025/05/27</td><td></td><td class="p-3"><button onclick="window.location.href='../stok_saat_ini/edit_stok_view.php'" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td>
+                      <tr><td>ST009</td><td>PRD009</td><td>L009</td><td>46</td><td>2025/12/06</td><td>2025/12/28</td><td></td><td class="p-3"><button onclick="window.location.href='../stok_saat_ini/edit_stok_view.php'" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td>
+                      <tr><td>ST010</td><td>PRD010</td><td>L010</td><td>22</td><td>2025/03/29</td><td>2025/7/5</td><td></td><td class="p-3"><button onclick="window.location.href='../stok_saat_ini/edit_stok_view.php'" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 flex justify-center items-center"><i class="fa fa-pencil"></i></button></td>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pagination">
+              <a href="#" class="active">1</a>
+              <a href="#">2</a>
+              <a href="#">3</a>
+              <a href="#">4</a>
+              <a href="#">5</a>
+              <a href="#">Next</a>
+            </div>
         </div>
-        <div class="flex items-center gap-6">
-          <div class="flex items-center gap-2">
-            <i class="fa-solid fa-user text-xl"></i>
-            <span>John Doe</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="container">
-        <div class="flex justify-between items-center mb-4">
-          <h2 class="text-2xl font-semibold">Total Stock</h2>
-
-        </div>
-        <br>
-        <div class="table-container">
-          <table>
-            <thead>
-              <tr>
-                <th>ID Product</th>
-                <th>Product Name</th>
-                <th>Location</th>
-                <th>Stock Amount</th>
-                <th>Date of Entry</th>
-                <th>Date of Exit</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php
-              include 'db_connection.php';
-              $query = "
-    SELECT 
-        s.id_stok,
-        s.jumlah_stok,
-        s.tanggal_diperbarui,
-        s.tanggal_terakhir_masuk,
-        p.kode_produk,
-        p.nama_produk,
-        p.stok_minimal,
-        l.nama_lokasi
-    FROM stok_saat_ini s
-    JOIN produk p ON s.id_produk = p.id_produk
-    JOIN lokasi_gudang l ON s.id_lokasi = l.id_lokasi
-";
-
-              // Run query
-              $data = mysqli_query($connection, $query);
-
-
-              foreach ($data as $d) :
-              ?>
-                <tr>
-                  <td><?= $d['kode_produk'] ?></td>
-                  <td><?= $d['nama_produk'] ?></td>
-                  <td><?= $d['nama_lokasi'] ?></td>
-                  <td class="<?= $d['jumlah_stok'] < $d['stok_minimal'] ? 'text-red-600 font-semibold' : 'text-gray-800' ?>">
-                    <?= $d['jumlah_stok'] ?>
-                  </td>
-                  <td><?= date('Y/m/d', strtotime($d['tanggal_terakhir_masuk'])) ?></td>
-                  <td><?= date('Y/m/d', strtotime($d['tanggal_diperbarui'])) ?></td>
-
-                </tr>
-              <?php endforeach ?>
-            </tbody>
-
-          </table>
-        </div>
-
-        <div class="pagination">
-          <a href="#" class="active">1</a>
-          <a href="#">2</a>
-          <a href="#">3</a>
-          <a href="#">4</a>
-          <a href="#">5</a>
-          <a href="#">Next</a>
-        </div>
-      </div>
     </div>
-  </div>
-
+</div>
 </body>
-
 </html>

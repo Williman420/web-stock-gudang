@@ -11,10 +11,10 @@
 
 <body class="bg-gray-100 text-gray-800 h-full w-full">
 
-    <div class="flex  h-full w-full overflow-hidden">
+    <div class="flex h-full w-full overflow-hidden">
         <?php include '../component/sidebar.php'; ?>
 
-        <div class="flex ml-64 flex-col w-full h-full overflow-y-auto px-5 py-6 ">
+        <div class="ml-64 flex flex-col w-full h-full overflow-y-auto px-5 py-6 ">
             <div class="flex w-full  justify-between mb-6">
                 <a href="../lokasi_gudang/lokasi_gudang_view.php">
                     <button class="p-5 bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
@@ -23,53 +23,69 @@
                 </a>
                 <div class="flex items-center gap-6">
                     <div class="flex items-center gap-2">
-                        <i class="fa-solid fa-user text-xl"></i>
-                        <span>John Doe</span>
+                        <button id="userButton" class="flex items-center space-x-2 focus:outline-none">
+                          <i class="fa-solid fa-user text-xl"></i>
+                          <span>Admin</span>
+                        </button>
+                        <div
+                          id="dropdownMenu"
+                          class="hidden absolute right-4 mt-20 w-20 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+                          <a
+                            href="login.php"
+                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                            Logout
+                          </a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="flex flex-col w-full h-full bg-white rounded-xl p-5">
-                <?php
-                // Include database connection
-                include 'db_connection.php';
-                $id_lokasi = $_GET['id_lokasi'];
-                $data = mysqli_query($connection, "SELECT * FROM lokasi_gudang WHERE id_lokasi= '$id_lokasi'");
-                foreach ($data as $d): ?>
-                    <form class="space-y-2" action="updateLokasi.php" method="post">
-                        <input type="hidden" name="id_lokasi" value="<?= $id_lokasi ?>">
-                        <div>
-                            <label class="text-sm font-medium block mb-1">Kode Lokasi</label>
-                            <input type="text" placeholder="lokasi1" name="kode_lokasi"
-                                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                value="<?= $d['kode_lokasi'] ?>" />
-                        </div>
-                        <div>
-                            <label class="text-sm font-medium block mb-1">lokasiName</label>
-                            <input type="text" placeholder="lokasi1" name="nama_lokasi"
-                                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                value="<?= $d['nama_lokasi'] ?>" />
-                        </div>
 
-                        <div>
-                            <label class="text-sm font-medium block mb-1">Capacity</label>
-                            <input type="text" placeholder="capacity" name="kapasitas"
-                                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                value="<?= $d['kapasitas'] ?>" />
-                        </div>
-                        <div>
-                            <label class="text-sm font-medium block mb-1">Desciption</label>
-                            <input type="text" placeholder="Email" name="deskripsi"
-                                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                value="<?= $d['deskripsi'] ?>" />
-                        </div>
-                        <button class="p-3 bg-blue-600 text-white rounded hover:bg-blue-700 " type="submit">
-                            Save Changes
-                        </button>
-                    </form>
-                <?php endforeach; ?>
+            <script>
+              const userButton = document.getElementById('userButton');
+              const dropdownMenu = document.getElementById('dropdownMenu');
+
+              userButton.addEventListener('click', () => {
+                  dropdownMenu.classList.toggle('hidden');
+                });
+
+              // Optional: close dropdown if clicked outside
+              window.addEventListener('click', function (e) {
+                  if (!userButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                      dropdownMenu.classList.add('hidden');
+                    }
+                });
+            </script>
+            
+            <div class="flex flex-col w-full h-full bg-white rounded-xl p-5">
+                <form class="space-y-2">
+                    <div>
+                        <label class="text-sm font-medium block mb-1">ID Location</label>
+                        <input type="text" placeholder="L001" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    </div>
+                    <div>
+                        <label class="text-sm font-medium block mb-1">Location Code</label>
+                        <input type="text" placeholder="LC001" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    </div>
+                    <div>
+                        <label class="text-sm font-medium block mb-1">Location</label>
+                        <input type="text" placeholder="Location" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    </div>
+                    <div>
+                        <label class="text-sm font-medium block mb-1 ">Capacity</label>
+                        <input type="text" placeholder="0" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    </div>
+                    <div>
+                        <label class="text-sm font-medium block mb-1 ">Description</label>
+                        <textarea placeholder="Describe your location" class=" w-full   border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 "></textarea>
+                    </div>
+                </form>
             </div>
             <br>
-
+            <div class="flex justify-between items-center mb-4">
+                <button class="p-3 bg-blue-600 text-white rounded hover:bg-blue-700">
+                    Save Changes
+                 </button>
+            </div>
         </div>
     </div>
 

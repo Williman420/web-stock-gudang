@@ -11,12 +11,12 @@
 
 <body class="bg-gray-100 text-gray-800 h-screen overflow-hidden">
 
-    <div class="flex h-full overflow-auto"  >
+    <div class="flex h-full">
         <!-- Sidebar (fixed width) -->
         <?php include '../component/sidebar.php'; ?>
 
         <!-- Main Content (scrollable) -->
-        <div class="flex-1 ml-64 px-5 py-6">
+        <div class="ml-64 flex-1  px-5 py-6">
             <div class="w-full flex justify-between mb-6">
                 <a href="produk_view.php">
                     <button class="p-5 bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
@@ -25,22 +25,49 @@
                 </a>
                 <div class="flex items-center gap-6">
                     <div class="flex items-center gap-2">
-                        <i class="fa-solid fa-user text-xl"></i>
-                        <span>John Doe</span>
+                        <button id="userButton" class="flex items-center space-x-2 focus:outline-none">
+                          <i class="fa-solid fa-user text-xl"></i>
+                          <span>Admin</span>
+                        </button>
+                        <div
+                            id="dropdownMenu"
+                            class="hidden absolute right-4 mt-20 w-20 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+                            <a
+                                href="login.php"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                Logout
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <main class="min-w-fit min-h-full ">
+            <script>
+              const userButton = document.getElementById('userButton');
+              const dropdownMenu = document.getElementById('dropdownMenu');
+
+              userButton.addEventListener('click', () => {
+                  dropdownMenu.classList.toggle('hidden');
+                });
+
+              // Optional: close dropdown if clicked outside
+              window.addEventListener('click', function (e) {
+                  if (!userButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                      dropdownMenu.classList.add('hidden');
+                    }
+                });
+            </script>
+
+            <main class="min-w-fit min-h-full">
                 <div class="flex w-full h-full">
                     <?php
-                    include 'db_connection.php';
+                    include 'db_connect.php';
                     $id = $_GET['kode_produk'];
                     $data = mysqli_query($connection, "SELECT * FROM produk where kode_produk = '$id'");
                     foreach ($data as $d) :
                     ?>
                         <div class="bg-white shadow-md rounded-lg overflow-hidden w-full h-full">
-                            <img src="<?php echo $d['gambar_produk']; ?>" alt="Gambar Produk">
+                            <img src="https://via.placeholder.com/300x200" alt="Product Image" class="w-full h-48 object-cover">
                             <div class="p-4">
                                 <div class="flex items-center justify-between">
                                     <h3 class="text-lg font-bold"><?= $d['kode_produk'] ?></h3>
@@ -54,17 +81,17 @@
                                 <div class="mt-2 flex justify-between">
                                     <div class="flex-col justify-between items-start gap-1">
                                         <p class="text-gray-600 text-sm"><?= $d['deskripsi'] ?></p>
-                                        <h3 class="text-m font-bold text-red-500">Harga beli = <?= $d['harga_beli'] ?></h3>
-                                        <h3 class="text-m font-bold text-green-600">Harga jual = <?= $d['harga_beli'] ?></h3>
+                                        <h3 class="text-m font-bold text-black-500">Harga beli = <?= $d['harga_beli'] ?></h3>
+                                        <h3 class="text-m font-bold text-black-600">Harga jual = <?= $d['harga_beli'] ?></h3>
                                     </div>
                                     <div class="flex gap-2">
-                                        <a href="edit_produk.php?id_produk=<?= $d['id_produk'] ?>">
+                                        <a href="edit_produk_view.php">
                                             <button class="p-5 bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
                                                 Edit
                                             </button>
                                         </a>
-                                        <a href="deleteProduk.php?id_produk=<?= $d['id_produk'] ?>">
-                                            <button class="p-5 bg-red-400 text-white py-2 rounded hover:bg-red-500">
+                                        <a href="">
+                                            <button class="p-5 bg-red-600 text-white py-2 rounded hover:bg-red-700">
                                                 Hapus
                                             </button>
                                         </a>
