@@ -116,51 +116,49 @@
                     </a>
                 </div>
                 <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Kode Product</th>
-                                <th>Product Name</th>
-                                <th>location</th>
-                                <th>Stock Amount</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            include 'db_connection.php';
-                            $query = " SELECT 
-                                  s.id_stok,
-                                   s.jumlah_stok,
-                                  s.tanggal_diperbarui,
-                                   s.tanggal_terakhir_masuk,
-                                   p.kode_produk,
-                                  p.nama_produk,
-                                   p.stok_minimal,
-                                  l.nama_lokasi
-                               FROM stok_saat_ini s
-                               JOIN produk p ON s.id_produk = p.id_produk
-                              JOIN lokasi_gudang l ON s.id_lokasi = l.id_lokasi WHERE s.jumlah_stok < p.stok_minimal
-                               ORDER BY s.jumlah_stok ASC
-                            ";
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <?php
+                        include 'db_connection.php';
+                        $query = "SELECT 
+              s.id_stok,
+              s.jumlah_stok,
+              s.tanggal_diperbarui,
+              s.tanggal_terakhir_masuk,
+              p.kode_produk,
+              p.nama_produk,
+              p.stok_minimal,
+              l.nama_lokasi
+            FROM stok_saat_ini s
+            JOIN produk p ON s.id_produk = p.id_produk
+            JOIN lokasi_gudang l ON s.id_lokasi = l.id_lokasi 
+            WHERE s.jumlah_stok < p.stok_minimal
+            ORDER BY s.jumlah_stok ASC";
 
+                        $data = mysqli_query($connection, $query);
+                        foreach ($data as $d) :
+                        ?>
+                            <div class="flex flex-col sm:flex-row justify-between bg-gray-50 p-4 rounded-lg border ">
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-box"></i>
+                                    <span><?= $d['kode_produk'] ?></span>
+                                </div>
+                                <div class="mb-2 sm:mb-0">
 
-                            // Run query
-                            $data = mysqli_query($connection, $query);
+                                    <span class="ml-1"><?= $d['nama_produk'] ?></span>
+                                </div>
+                                <div class="mb-2 sm:mb-0">
 
+                                    <span class="ml-1"><?= $d['nama_lokasi'] ?></span>
+                                </div>
+                                <div>
 
-                            foreach ($data as $d) :
-                            ?>
-                                <tr>
-                                    <td><?= $d['kode_produk'] ?></td>
-                                    <td><?= $d['nama_produk'] ?></td>
-                                    <td><?= $d['nama_lokasi'] ?></td>
-                                    <td class="<?= $d['jumlah_stok'] < $d['stok_minimal'] ? 'text-red-600 font-semibold' : 'text-gray-800' ?>">
+                                    <span class="ml-1 <?= $d['jumlah_stok'] < $d['stok_minimal'] ? 'text-red-600 font-semibold' : 'text-gray-800' ?>">
                                         <?= $d['jumlah_stok'] ?>
-                                </tr>
-                            <?php endforeach ?>
-                        </tbody>
-
-                    </table>
+                                    </span>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-md">
