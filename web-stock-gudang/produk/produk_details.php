@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
+ <?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+header("Location:../view/login.php"); 
+exit;
+}
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,13 +33,14 @@
                     <div class="flex items-center gap-2">
                         <button id="userButton" class="flex items-center space-x-2 focus:outline-none">
                           <i class="fa-solid fa-user text-xl"></i>
-                          <span>Admin</span>
+                          <span><?php echo $_SESSION['username']; ?><</span>
                         </button>
                         <div
+                        
                             id="dropdownMenu"
                             class="hidden absolute right-4 mt-20 w-20 bg-white border border-gray-200 rounded-md shadow-lg z-50">
                             <a
-                                href="login.php"
+                                href="../view/logout.php"
                                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                                 Logout
                             </a>

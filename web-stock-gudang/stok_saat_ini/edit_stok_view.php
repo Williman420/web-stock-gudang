@@ -31,7 +31,14 @@
                           id="dropdownMenu"
                           class="hidden absolute right-4 mt-20 w-20 bg-white border border-gray-200 rounded-md shadow-lg z-50">
                           <a
-                              href="login.php"
+                            <?php
+                            session_start();
+                            if (!isset($_SESSION['user_id'])) {
+                            header("Location:../view/login.php"); 
+                            exit;
+                            }
+                            ?>
+                              href="../view/login.php"
                               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                               Logout
                             </a>

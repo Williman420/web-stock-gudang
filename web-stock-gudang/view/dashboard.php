@@ -60,6 +60,13 @@
     <main class="ml-64 flex-1 p-6 space-y-6">
 
         <!-- Top Bar -->
+         <?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header('Location: view/login.php');
+    exit;
+}
+?>
         <div class="flex justify-between items-center">
             <div class="flex items-center gap-2">
                 <input type="text" placeholder="Search for datas & reports..." class="px-4 py-2 rounded-md border w-96" />

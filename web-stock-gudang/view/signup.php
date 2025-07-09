@@ -1,3 +1,32 @@
+<?php
+require 'db_connection.php';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $username = $_POST['username'];
+  $password = $_POST['password'];
+  $confirm = $_POST['confirm_password'];
+  $email    = $_POST['email'];
+
+  if ($password !== $confirm) {
+    $error = "Konfirmasi password tidak cocok!";
+  } else {
+    $cek = mysqli_query($connection, "SELECT * FROM users WHERE username='$username'");
+    if (mysqli_num_rows($cek) > 0) {
+      $error = "Username sudah digunakan";
+    } else {
+      $q = "INSERT INTO users (username, password, email) VALUES ('$username', '$password', '$email')";
+      if (mysqli_query($connection, $q)) {
+        header("Location: login.php");
+        exit;
+      } else {
+        $error = "Gagal mendaftar";
+      }
+    }
+  }
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,7 +46,7 @@
       </p>
 
       <!-- Sign In Form -->
-      <form action="login.php" method="POST" class="space-y-4">
+      <form method="POST" class="space-y-4">
         <!-- Username -->
         <div>
           <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
@@ -63,7 +92,7 @@
           <input
             type="password"
             id="password"
-            name="password"
+            name="confirm_password"
             placeholder="••••••••"
             required
             class="mt-1 block w-full rounded-md border border-gray-300 bg-blue-50 px-4 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
