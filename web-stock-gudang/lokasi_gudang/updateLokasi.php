@@ -15,5 +15,4 @@ kapasitas = $kapasitas,
 deskripsi = '$deskripsi' 
 WHERE id_lokasi = $id_lokasi");
 
-header("location: listLokasi.php");
-?>
+header("location: lokasi_gudang_view.php");

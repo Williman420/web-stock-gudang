@@ -59,28 +59,20 @@
             <div class="flex flex-col w-full h-full bg-white rounded-xl p-5">
                 <form class="space-y-2">
                     <div>
-                        <label class="text-sm font-medium block mb-1">ID Stock</label>
-                        <input type="text" placeholder="ST001" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-                    </div>
-                    <div>
                         <label class="text-sm font-medium block mb-1">ID Product</label>
                         <input type="text" placeholder="PRD001" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     </div>
                     <div>
-                        <label class="text-sm font-medium block mb-1 ">ID Location</label>
-                        <input type="text" placeholder="L001" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                        <label class="text-sm font-medium block mb-1">ID Supplier</label>
+                        <input type="text" placeholder="SP001" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     </div>
                     <div>
-                        <label class="text-sm font-medium block mb-1 ">ID Supplier</label>
-                        <input type="text" placeholder="SP001" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                        <label class="text-sm font-medium block mb-1 ">Product Name</label>
+                        <input type="text" placeholder="Product 1" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     </div>
                     <div>
                         <label class="text-sm font-medium block mb-1 ">Stock Amount</label>
                         <input type="text" placeholder="0" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-                    </div>
-                    <div>
-                        <label class="text-sm font-medium block mb-1 ">Description</label>
-                        <input type="text" placeholder="Describe your stock" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     </div>
                     <div class="flex gap-2 justify-between">
                         <div>
@@ -88,7 +80,7 @@
                             <input type="number" placeholder="YYYY/MM/DD" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
                         </div>
                         <div>
-                            <label class="text-sm font-medium block mb-1">Reference Number</label>
+                            <label class="text-sm font-medium block mb-1">Purchase Price</label>
                             <input type="text" placeholder="0" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
                         </div>
                     </div>

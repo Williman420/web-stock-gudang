@@ -55,16 +55,16 @@
                     }
                 });
             </script>
-            
+
             <div class="flex flex-col w-full h-full bg-white rounded-xl p-5">
                 <form class="space-y-2">
                     <div>
-                        <label class="text-sm font-medium block mb-1">ID Customer</label>
-                        <input type="text" placeholder="CS001" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                        <label class="text-sm font-medium block mb-1">ID Supplier</label>
+                        <input type="text" placeholder="SP001" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     </div>
                     <div>
-                        <label class="text-sm font-medium block mb-1">Customer Name</label>
-                        <input type="text" placeholder="Customer 1" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                        <label class="text-sm font-medium block mb-1">Supplier Name</label>
+                        <input type="text" placeholder="Supplier 1" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     </div>
                     <div>
                         <label class="text-sm font-medium block mb-1 ">Address</label>

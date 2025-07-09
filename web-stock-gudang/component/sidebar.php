@@ -24,12 +24,12 @@
             <p>Stock Keluar</p>
         </a>
         <a href="../supplier/supplier_view.php" class=" w-full px-4 py-3 rounded-md flex items-center gap-3 text-black font-semibold hover:bg-gray-100 hover:text-blue-700">
-            <i class="fa-solid fa-user"></i>
+           <i class="fa-solid fa-address-card"></i>
             <p>Supplier</p>
         </a>
         <a href="../pelanggan/pelanggan_view.php" class=" w-full px-4 py-3 rounded-md flex items-center gap-3 text-black font-semibold hover:bg-gray-100 hover:text-blue-700">
-            <i class="fa-solid fa-users"></i>
-            <p>Customer</p>
+            <i class="fa-solid fa-user"></i>
+            <p>Pelanggan</p>
         </a>
         <a href="../lokasi_gudang/lokasi_gudang_view.php" class=" w-full px-4 py-3 rounded-md flex items-center gap-3 text-black font-semibold hover:bg-gray-100 hover:text-blue-700">
             <i class="fa-solid fa-globe"></i>

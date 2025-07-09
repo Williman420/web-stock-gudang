@@ -16,7 +16,7 @@
         <?php include '../component/sidebar.php'; ?>
 
         <!-- Main content (scrollable only here) -->
-        <div class="ml-64 flex-1 p-6 space-y-6 overflow-auto">
+        <div class="flex-1 ml-64 p-6 space-y-6 overflow-auto">
             <div class="w-full h-fit flex justify-between mb-6">
                 <div class="flex items-center gap-2">
                     <input type="text" placeholder="Search for datas & reports..." class="px-4 py-2 rounded-md border w-96" />
@@ -27,8 +27,8 @@
                 <div class="flex items-center gap-6">
                     <div class="flex items-center gap-2">
                         <button id="userButton" class="flex items-center space-x-2 focus:outline-none">
-                           <i class="fa-solid fa-user text-xl"></i>
-                           <span>Admin</span>
+                          <i class="fa-solid fa-user text-xl"></i>
+                          <span>Admin</span>
                         </button>
                         <div
                             id="dropdownMenu"
@@ -70,12 +70,12 @@
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     <?php
-                    include 'db_connect.php';
+                    include 'db_connection.php';
                     $data = mysqli_query($connection, "SELECT * FROM produk");
                     foreach ($data as $d) :
                     ?>
                         <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                            <img src="https://via.placeholder.com/300x200" alt="Product Image" class="w-full h-48 object-cover">
+                            <img src=<?= $d['gambar_produk'] ?> alt="Product Image" class="w-full h-48 object-cover">
                             <div class="p-4">
                                 <div class="flex items-center justify-between">
                                     <h3 class="text-lg font-bold"><?= $d['kode_produk'] ?></h3>
