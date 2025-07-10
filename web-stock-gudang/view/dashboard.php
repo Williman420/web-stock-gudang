@@ -61,7 +61,6 @@
 
         <!-- Top Bar -->
         <?php include '../view/auth.php'; ?>
-?>
         <div class="flex justify-between items-center">
             <div class="flex items-center gap-2">
                 <input type="text" placeholder="Search for datas & reports..." class="px-4 py-2 rounded-md border w-96" />
