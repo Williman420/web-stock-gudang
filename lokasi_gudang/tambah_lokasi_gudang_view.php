@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD:lokasi_gudang/tambah_lokasi_gudang_view.php
-
-=======
 <?php
 session_start();
 if (!isset($_SESSION['user_id'])) {
@@ -10,7 +7,6 @@ if (!isset($_SESSION['user_id'])) {
   exit;
 }
 ?>
->>>>>>> 1612d3249b602bd08771e5eff8799dbcea511304:web-stock-gudang/lokasi_gudang/tambah_lokasi_gudang_view.php
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -84,15 +80,6 @@ if (!isset($_SESSION['user_id'])) {
                         <label class="text-sm font-medium block mb-1 ">Description</label>
                         <textarea placeholder="Describe your location" name="deskripsi" class=" w-full   border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 "></textarea>
                     </div>
-<<<<<<< HEAD:lokasi_gudang/tambah_lokasi_gudang_view.php
-                    <div class="flex justify-between items-center mb-4">
-                        <button class="p-3 bg-blue-600 text-white rounded hover:bg-blue-700" type="submit">
-                            Add Location
-                        </button>
-                    </div>
-                </form>
-            </div>
-=======
                 </form>
             </div>
             <br>
@@ -101,7 +88,6 @@ if (!isset($_SESSION['user_id'])) {
                     Add Location
                 </button>
             </div>
->>>>>>> 1612d3249b602bd08771e5eff8799dbcea511304:web-stock-gudang/lokasi_gudang/tambah_lokasi_gudang_view.php
 
 
         </div>

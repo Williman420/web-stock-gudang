@@ -1,9 +1,14 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+  header("Location:../view/login.php");
+  exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD:stok_saat_ini/total_stok_view.php
 
-=======
->>>>>>> 1612d3249b602bd08771e5eff8799dbcea511304:web-stock-gudang/stok_saat_ini/total_stok_view.php
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -81,13 +86,12 @@
 </head>
 
 <body class="bg-gray-100 text-gray-800 h-screen overflow-hidden">
-
   <div class="flex h-full">
     <!-- Sidebar -->
     <?php include '../component/sidebar.php'; ?>
 
-    <!-- Main content (scrollable only here) -->
-    <div class="ml-64 flex-1 p-6 space-y-6 overflow-auto">
+    <!-- Main content -->
+    <div class="ml-64 flex-1 p-6 flex-col space-y-6 overflow-auto">
       <div class="w-full h-fit flex justify-between mb-6">
         <div class="flex items-center gap-2">
           <input type="text" placeholder="Search for datas & reports..." class="px-4 py-2 rounded-md border w-96" />
@@ -101,46 +105,33 @@
               <i class="fa-solid fa-user text-xl"></i>
               <span>Admin</span>
             </button>
-            <div
-              id="dropdownMenu"
-              class="hidden absolute right-5 mt-20 w-20 bg-white border border-gray-200 rounded-md shadow-lg z-50">
-                <a
-                  <?php
-                  session_start();
-                  if (!isset($_SESSION['user_id'])) {
-                  header("Location:../view/login.php"); 
-                  exit;
-                  }
-                  ?>
-                  href="../view/login.php"
-                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                  Logout
-                </a>
+            <div id="dropdownMenu" class="hidden absolute right-5 mt-20 w-20 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+              <a href="../view/login.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                Logout
+              </a>
             </div>
           </div>
         </div>
       </div>
 
       <script>
-              const userButton = document.getElementById('userButton');
-              const dropdownMenu = document.getElementById('dropdownMenu');
+        const userButton = document.getElementById('userButton');
+        const dropdownMenu = document.getElementById('dropdownMenu');
 
-              userButton.addEventListener('click', () => {
-                  dropdownMenu.classList.toggle('hidden');
-                });
+        userButton.addEventListener('click', () => {
+          dropdownMenu.classList.toggle('hidden');
+        });
 
-              // Optional: close dropdown if clicked outside
-              window.addEventListener('click', function (e) {
-                  if (!userButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
-                      dropdownMenu.classList.add('hidden');
-                    }
-                });
-            </script>
+        window.addEventListener('click', function(e) {
+          if (!userButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
+            dropdownMenu.classList.add('hidden');
+          }
+        });
+      </script>
 
       <div class="container">
         <div class="flex justify-between items-center mb-4">
           <h2 class="text-2xl font-semibold">Total Stock</h2>
-
         </div>
         <br>
         <div class="table-container">
@@ -159,40 +150,40 @@
               <?php
               include 'db_connection.php';
               $query = "
-    SELECT 
-        s.id_stok,
-        s.jumlah_stok,
-        s.tanggal_diperbarui,
-        s.tanggal_terakhir_masuk,
-        p.kode_produk,
-        p.nama_produk,
-        p.stok_minimal,
-        l.nama_lokasi
-    FROM stok_saat_ini s
-    JOIN produk p ON s.id_produk = p.id_produk
-    JOIN lokasi_gudang l ON s.id_lokasi = l.id_lokasi
-";
-
-              // Run query
+              SELECT 
+                s.id_stok,
+                s.jumlah_stok,
+                s.tanggal_diperbarui,
+                s.tanggal_terakhir_masuk,
+                p.kode_produk,
+                p.nama_produk,
+                p.stok_minimal,
+                l.nama_lokasi
+              FROM stok_saat_ini s
+              JOIN produk p ON s.id_produk = p.id_produk
+              JOIN lokasi_gudang l ON s.id_lokasi = l.id_lokasi
+              ";
               $data = mysqli_query($connection, $query);
-
-
-              foreach ($data as $d) :
+              if (mysqli_num_rows($data) > 0) {
+                foreach ($data as $d) :
               ?>
-                <tr>
-                  <td><?= $d['kode_produk'] ?></td>
-                  <td><?= $d['nama_produk'] ?></td>
-                  <td><?= $d['nama_lokasi'] ?></td>
-                  <td class="<?= $d['jumlah_stok'] < $d['stok_minimal'] ? 'text-red-600 font-semibold' : 'text-gray-800' ?>">
-                    <?= $d['jumlah_stok'] ?>
-                  </td>
-                  <td><?= date('Y/m/d', strtotime($d['tanggal_terakhir_masuk'])) ?></td>
-                  <td><?= date('Y/m/d', strtotime($d['tanggal_diperbarui'])) ?></td>
-
-                </tr>
-              <?php endforeach ?>
+                  <tr>
+                    <td><?= $d['kode_produk'] ?></td>
+                    <td><?= $d['nama_produk'] ?></td>
+                    <td><?= $d['nama_lokasi'] ?></td>
+                    <td class="<?= $d['jumlah_stok'] < $d['stok_minimal'] ? 'text-red-600 font-semibold' : 'text-gray-800' ?>">
+                      <?= $d['jumlah_stok'] ?>
+                    </td>
+                    <td><?= date('Y/m/d', strtotime($d['tanggal_terakhir_masuk'])) ?></td>
+                    <td><?= date('Y/m/d', strtotime($d['tanggal_diperbarui'])) ?></td>
+                  </tr>
+              <?php
+                endforeach;
+              } else {
+                echo "<tr><td colspan='6' class='text-center text-gray-500'>No data available</td></tr>";
+              }
+              ?>
             </tbody>
-
           </table>
         </div>
 
@@ -207,7 +198,6 @@
       </div>
     </div>
   </div>
-
 </body>
 
 </html>

@@ -1,12 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD:stok_keluar/stok_keluar_view.php
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stock keluar</title>
-=======
  <?php
 session_start();
 if (!isset($_SESSION['user_id'])) {
@@ -18,7 +11,6 @@ exit;
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Stock Keluar</title>
->>>>>>> 1612d3249b602bd08771e5eff8799dbcea511304:web-stock-gudang/stok_keluar/stok_keluar_view.php
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>

@@ -60,49 +60,79 @@
     <main class="ml-64 flex-1 p-6 space-y-6">
 
         <!-- Top Bar -->
+         <?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header('Location: view/login.php');
+    exit;
+}
+?>
         <div class="flex justify-between items-center">
             <div class="flex items-center gap-2">
                 <input type="text" placeholder="Search for datas & reports..." class="px-4 py-2 rounded-md border w-96" />
                 <button class="bg-blue-600 text-white px-4 py-2 rounded-md"><i class="fa fa-search"></i></button>
             </div>
-            <div class="flex items-center gap-6">
-                <i class="fa-regular fa-comment-dots text-xl relative">
-                    <span class="absolute top-0 right-0 text-xs bg-red-500 text-white rounded-full w-5 h-5 flex justify-center items-center">1</span>
-                </i>
-                <i class="fa-regular fa-envelope text-xl relative">
-                    <span class="absolute top-0 right-0 text-xs bg-red-500 text-white rounded-full w-5 h-5 flex justify-center items-center">1</span>
-                </i>
-                <i class="fa-regular fa-bell text-xl relative">
-                    <span class="absolute top-0 right-0 text-xs bg-red-500 text-white rounded-full w-5 h-5 flex justify-center items-center">3</span>
-                </i>
-                <div class="flex items-center gap-2">
-                    <img src="https://i.pravatar.cc/40" alt="User" class="rounded-full w-10 h-10" />
-                    <span>John Doe</span>
+            <div class="relative inline-block text-left">
+                <button id="userButton" class="flex items-center space-x-2 focus:outline-none">
+                  <i class="fa-solid fa-user text-xl"></i>
+                  <span class="text-gray-800 font-medium">Admin</span>
+                </button>
+                <div
+                  id="dropdownMenu"
+                  class="hidden absolute right-0 mt-2 w-20 bg-white border border-gray-200 rounded-md shadow-lg z-50"
+                >
+                  <a
+                    href="login.php"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                    Logout
+                  </a>
                 </div>
             </div>
         </div>
 
+        <script>
+          const userButton = document.getElementById('userButton');
+          const dropdownMenu = document.getElementById('dropdownMenu');
+
+          userButton.addEventListener('click', () => {
+              dropdownMenu.classList.toggle('hidden');
+            });
+
+          // Optional: close dropdown if clicked outside
+          window.addEventListener('click', function (e) {
+              if (!userButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                  dropdownMenu.classList.add('hidden');
+                }
+            });
+        </script>
+
         <!-- Overview Cards -->
-        <section class="grid grid-cols-4 gap-6">
+        <section class="grid grid-cols-5 gap-3">
             <div class="bg-gradient-to-br from-pink-500 to-indigo-500 text-white p-6 rounded-lg shadow-md transform hover:scale-105 transition duration-300">
-                <i class="fa-solid fa-user text-3xl mb-2"></i>
-                <h3 class="text-3xl font-bold">10</h3>
-                <p>suppliers</p>
+                <i class="fa-solid fa-address-card text-3xl mb-2"></i>
+                <h3 class="text-3xl font-bold">10+</h3>
+                <p>Suppliers</p>
             </div>
             <div class="bg-gradient-to-br from-green-400 to-teal-500 text-white p-6 rounded-lg shadow-md transform hover:scale-105 transition duration-300">
                 <i class="fa-solid fa-truck-ramp-box text-3xl mb-2"></i>
                 <h3 class="text-3xl font-bold">1,086</h3>
-                <p>stock in</p>
+                <p>Stock Masuk</p>
             </div>
             <div class="bg-gradient-to-br from-pink-400 to-orange-500 text-white p-6 rounded-lg shadow-md transform hover:scale-105 transition duration-300">
                 <i class="fa-solid fa-box text-3xl mb-2"></i>
                 <h3 class="text-3xl font-bold">3,688</h3>
-                <p>total stock</p>
+                <p>Total Stock</p>
             </div>
             <div class="bg-gradient-to-br from-yellow-300 to-green-400 text-white p-6 rounded-lg shadow-md transform hover:scale-105 transition duration-300">
-                <i class="fa-solid fa-dollar-sign text-3xl mb-2"></i>
-                <h3 class="text-3xl font-bold">IDR 13,060,386</h3>
-                <p>stock sold</p>
+                <i class="fa-solid fa-truck-fast text-3xl mb-2"></i>
+                <h3 class="text-3xl font-bold">765</h3>
+                <p>Stock Keluar</p>
+            </div>
+            <div class="bg-gradient-to-br from-purple-500 to-blue-500 text-white p-6 rounded-lg shadow-md transform hover:scale-105 transition duration-300">
+                <i class="fa-solid fa-user text-3xl mb-2"></i>
+                <h3 class="text-3xl font-bold">500+</h3>
+                <p>Customer</p>
             </div>
         </section>
 

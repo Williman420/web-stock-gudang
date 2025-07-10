@@ -100,10 +100,6 @@ exit;
         </div>
         <div class="flex items-center gap-6">
           <div class="flex items-center gap-2">
-<<<<<<< HEAD:supplier/supplier_view.php
-            <i class="fa-solid fa-user text-xl"></i>
-            <span>John Doe</span>
-=======
             <button id="userButton" class="flex items-center space-x-2 focus:outline-none">
               <i class="fa-solid fa-user text-xl"></i>
               <span>Admin</span>
@@ -117,13 +113,10 @@ exit;
                   Logout
                 </a>
             </div>
->>>>>>> 1612d3249b602bd08771e5eff8799dbcea511304:web-stock-gudang/supplier/supplier_view.php
           </div>
         </div>
       </div>
 
-<<<<<<< HEAD:supplier/supplier_view.php
-=======
       <script>
         const userButton = document.getElementById('userButton');
         const dropdownMenu = document.getElementById('dropdownMenu');
@@ -140,7 +133,6 @@ exit;
         });
       </script>
 
->>>>>>> 1612d3249b602bd08771e5eff8799dbcea511304:web-stock-gudang/supplier/supplier_view.php
       <div class="container">
         <div class="flex justify-between items-center mb-4">
           <h2 class="text-2xl font-semibold">Our Supplier</h2>

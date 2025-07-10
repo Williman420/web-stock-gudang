@@ -83,15 +83,6 @@ exit;
                         <label class="text-sm font-medium block mb-1 ">Contact person</label>
                         <input type="text" placeholder="Contact person" name="kontak_person" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     </div>
-<<<<<<< HEAD:supplier/tambah_supplier_view.php
-                    <div class="flex justify-between items-center mb-4">
-                        <button class="p-3 bg-blue-600 text-white rounded hover:bg-blue-700" type="submit">
-                            Add Supplier
-                        </button>
-                    </div>
-                </form>
-            </div>
-=======
                 </form>
             </div>
             <br>
@@ -100,7 +91,6 @@ exit;
                     Add Supplier
                 </button>
             </div>
->>>>>>> 1612d3249b602bd08771e5eff8799dbcea511304:web-stock-gudang/supplier/tambah_supplier_view.php
 
         </div>
     </div>

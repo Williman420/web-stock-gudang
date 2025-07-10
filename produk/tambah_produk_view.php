@@ -1,12 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD:produk/tambah_produk_view.php
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>viewProduk</title>
-=======
  <?php
 session_start();
 if (!isset($_SESSION['user_id'])) {
@@ -18,7 +11,6 @@ exit;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Product</title>
->>>>>>> 1612d3249b602bd08771e5eff8799dbcea511304:web-stock-gudang/produk/tambah_produk_view.php
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
@@ -81,29 +73,17 @@ exit;
                         </label>
                     </div>
                     <div>
-<<<<<<< HEAD:produk/tambah_produk_view.php
-                        <label class="text-sm font-medium block mb-1">Kode Produk *</label>
-=======
                         <label class="text-sm font-medium block mb-1">ID Product</label>
->>>>>>> 1612d3249b602bd08771e5eff8799dbcea511304:web-stock-gudang/produk/tambah_produk_view.php
                         <input type="text" placeholder="PRD001" required name="kode_produk"
                             class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     </div>
                     <div>
-<<<<<<< HEAD:produk/tambah_produk_view.php
-                        <label class="text-sm font-medium block mb-1">Nama Produk *</label>
-=======
                         <label class="text-sm font-medium block mb-1">Product Name</label>
->>>>>>> 1612d3249b602bd08771e5eff8799dbcea511304:web-stock-gudang/produk/tambah_produk_view.php
                         <input type="text" placeholder="Kertas A4" required name="nama_produk"
                             class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     </div>
                     <div>
-<<<<<<< HEAD:produk/tambah_produk_view.php
-                        <label class="text-sm font-medium block mb-1 ">Deskripsi Produk</label>
-=======
                         <label class="text-sm font-medium block mb-1 ">Description</label>
->>>>>>> 1612d3249b602bd08771e5eff8799dbcea511304:web-stock-gudang/produk/tambah_produk_view.php
                         <textarea placeholder="Describe your product" required name="deskripsi"
                             class=" w-full   border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 "></textarea>
                     </div>
@@ -120,31 +100,19 @@ exit;
                         </div>
                     </div>
                     <div>
-<<<<<<< HEAD:produk/tambah_produk_view.php
-                        <label class="text-sm font-medium block mb-1 text-red-600">Harga Beli</label>
-=======
                         <label class="text-sm font-medium block mb-1">Harga Beli</label>
->>>>>>> 1612d3249b602bd08771e5eff8799dbcea511304:web-stock-gudang/produk/tambah_produk_view.php
                         <input type="number" placeholder="Enter amount" required name="harga_beli"
                             class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     </div>
                     <div>
-<<<<<<< HEAD:produk/tambah_produk_view.php
-                        <label class="text-sm font-medium block mb-1 text-green-600">Harga Jual</label>
-=======
                         <label class="text-sm font-medium block mb-1">Harga Jual</label>
->>>>>>> 1612d3249b602bd08771e5eff8799dbcea511304:web-stock-gudang/produk/tambah_produk_view.php
                         <input type="number" placeholder="Enter amount" required name="harga_jual"
                             class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     </div>
 
                     <div class="flex justify-end w-full h-fit ">
                         <button class="p-5 bg-blue-600 text-white py-2 mt-5 rounded hover:bg-blue-700" type="submit">
-<<<<<<< HEAD:produk/tambah_produk_view.php
-                            Simpan
-=======
                             Save Changes
->>>>>>> 1612d3249b602bd08771e5eff8799dbcea511304:web-stock-gudang/produk/tambah_produk_view.php
                         </button>
                     </div>
                 </div>
