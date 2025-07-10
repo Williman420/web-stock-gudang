@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD:produk/produk_details.php
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>viewProduk</title>
+=======
+ <?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+header("Location:../view/login.php"); 
+exit;
+}
+?>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+>>>>>>> 1612d3249b602bd08771e5eff8799dbcea511304:web-stock-gudang/produk/produk_details.php
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
@@ -20,16 +34,44 @@
             <div class="w-full flex justify-between mb-6">
                 <a href="produk_view.php">
                     <button class="p-5 bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
-                        Kembali
+                        Back
                     </button>
                 </a>
                 <div class="flex items-center gap-6">
                     <div class="flex items-center gap-2">
-                        <i class="fa-solid fa-user text-xl"></i>
-                        <span>John Doe</span>
+                        <button id="userButton" class="flex items-center space-x-2 focus:outline-none">
+                          <i class="fa-solid fa-user text-xl"></i>
+                          <span><?php echo $_SESSION['username']; ?><</span>
+                        </button>
+                        <div
+                        
+                            id="dropdownMenu"
+                            class="hidden absolute right-4 mt-20 w-20 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+                            <a
+                                href="../view/logout.php"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                Logout
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <script>
+              const userButton = document.getElementById('userButton');
+              const dropdownMenu = document.getElementById('dropdownMenu');
+
+              userButton.addEventListener('click', () => {
+                  dropdownMenu.classList.toggle('hidden');
+                });
+
+              // Optional: close dropdown if clicked outside
+              window.addEventListener('click', function (e) {
+                  if (!userButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                      dropdownMenu.classList.add('hidden');
+                    }
+                });
+            </script>
 
             <main class="min-w-fit min-h-full ">
                 <div class="flex w-full h-full">
@@ -45,7 +87,7 @@
                                 <div class="flex items-center justify-between">
                                     <h3 class="text-lg font-bold"><?= $d['kode_produk'] ?></h3>
                                     <div class="flex items-center gap-1">
-                                        <h3 class="text-lg font-semibold">Stok minimal: <?= $d['stok_minimal'] ?></h3>
+                                        <h3 class="text-lg font-semibold">Stock Minimal: <?= $d['stok_minimal'] ?></h3>
                                         <h3 class="text-lg font-semibold"><?= $d['satuan'] ?></h3>
                                     </div>
                                 </div>
@@ -64,8 +106,8 @@
                                             </button>
                                         </a>
                                         <a href="deleteProduk.php?id_produk=<?= $d['id_produk'] ?>">
-                                            <button class="p-5 bg-red-400 text-white py-2 rounded hover:bg-red-500">
-                                                Hapus
+                                            <button class="p-5 bg-red-600 text-white py-2 rounded hover:bg-red-500">
+                                                Delete
                                             </button>
                                         </a>
                                     </div>

@@ -23,11 +23,46 @@
                 </a>
                 <div class="flex items-center gap-6">
                     <div class="flex items-center gap-2">
-                        <i class="fa-solid fa-user text-xl"></i>
-                        <span>John Doe</span>
+                        <button id="userButton" class="flex items-center space-x-2 focus:outline-none">
+                          <i class="fa-solid fa-user text-xl"></i>
+                          <span>Admin</span>
+                        </button>
+                        <div
+                          id="dropdownMenu"
+                          class="hidden absolute right-4 mt-20 w-20 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+                          <a
+                            <?php
+                            session_start();
+                            if (!isset($_SESSION['user_id'])) {
+                            header("Location:../view/login.php"); 
+                            exit;
+                            }
+                            ?>
+                              href="../view/login.php"
+                              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                              Logout
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <script>
+              const userButton = document.getElementById('userButton');
+              const dropdownMenu = document.getElementById('dropdownMenu');
+
+              userButton.addEventListener('click', () => {
+                  dropdownMenu.classList.toggle('hidden');
+                });
+
+              // Optional: close dropdown if clicked outside
+              window.addEventListener('click', function (e) {
+                  if (!userButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                      dropdownMenu.classList.add('hidden');
+                    }
+                });
+            </script>
+            
             <div class="flex flex-col w-full h-full bg-white rounded-xl p-5">
                 <form class="space-y-2">
                     <div>

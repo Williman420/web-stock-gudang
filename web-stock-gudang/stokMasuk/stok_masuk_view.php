@@ -1,12 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
-<<<<<<< HEAD:stok_keluar/stok_keluar_view.php
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stock keluar</title>
-=======
  <?php
 session_start();
 if (!isset($_SESSION['user_id'])) {
@@ -14,11 +6,11 @@ header("Location:../view/login.php");
 exit;
 }
 ?>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stock Keluar</title>
->>>>>>> 1612d3249b602bd08771e5eff8799dbcea511304:web-stock-gudang/stok_keluar/stok_keluar_view.php
+  <title>Stock Masuk</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
@@ -127,27 +119,27 @@ exit;
       </div>
 
       <script>
-              const userButton = document.getElementById('userButton');
-              const dropdownMenu = document.getElementById('dropdownMenu');
+        const userButton = document.getElementById('userButton');
+        const dropdownMenu = document.getElementById('dropdownMenu');
 
-              userButton.addEventListener('click', () => {
-                  dropdownMenu.classList.toggle('hidden');
-                });
+        userButton.addEventListener('click', () => {
+          dropdownMenu.classList.toggle('hidden');
+        });
 
-              // Optional: close dropdown if clicked outside
-              window.addEventListener('click', function (e) {
-                  if (!userButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
-                      dropdownMenu.classList.add('hidden');
-                    }
-                });
-            </script>
+        // Optional: close dropdown if clicked outside
+        window.addEventListener('click', function (e) {
+          if (!userButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
+            dropdownMenu.classList.add('hidden');
+          }
+        });
+      </script>
 
       <div class="container">
         <div class="flex justify-between items-center mb-4">
-          <h2 class="text-2xl font-semibold">Stock keluar</h2>
-          <a href="tambah_stok_keluar_view.php">
+          <h2 class="text-2xl font-semibold">Stock Masuk</h2>
+          <a href="tambah_stok_masuk_view.php">
             <button class="p-3 bg-blue-600 text-white rounded hover:bg-blue-700">
-              Add Stock keluar
+              Add Stock Masuk
             </button>
           </a>
         </div>
@@ -158,14 +150,13 @@ exit;
               <tr>
                 <th>ID</th>
                 <th>Kode Product</th>
-                <th>Nama Pelanggan</th>
+                <th>ID Supplier</th>
                 <th>Product Name</th>
                 <th>location</th>
-                <th>Jumlah Keluar</th>
-                <th>Tipe Keluar</th>
+                <th>Stock Amount</th>
                 <th>Reference Code</th>
                 <th>Stock Input Details</th>
-                <th>Tanggal Keluar</th>
+                <th>Date of Entry</th>
               </tr>
             </thead>
             <tbody>
@@ -173,38 +164,35 @@ exit;
               include "db_connection.php";
               $query = "SELECT
     p.kode_produk,
-    pl.nama_pelanggan,
+    s.nama_supplier,
     p.nama_produk,
     l.nama_lokasi,
-    sk.jumlah_keluar,
-    sk.keterangan,
-    sk.tipe_keluar,
-    sk.nomor_referensi,
-    DATE_FORMAT(sk.tanggal_keluar, '%Y/%m/%d') AS date_of_exit,
-    sk.id_stok_keluar
+    sm.jumlah_masuk,
+    sm.keterangan,
+    sm.nomor_referensi,
+    DATE_FORMAT(sm.tanggal_masuk, '%Y/%m/%d') AS date_of_entry,
+    sm.id_stok_masuk
 FROM
     produk p
- JOIN stok_keluar sk ON
-    p.id_produk = sk.id_produk
- JOIN pelanggan pl ON
-    sk.id_pelanggan = pl.id_pelanggan
+ JOIN stok_masuk sm ON
+    p.id_produk = sm.id_produk
+ JOIN supplier s ON
+    sm.id_supplier = s.id_supplier
      JOIN lokasi_gudang l ON 
-    sk.id_lokasi = l.id_lokasi";
+    sm.id_lokasi = l.id_lokasi";
               $data = mysqli_query($connection, $query);
               foreach ($data as $d) :
               ?>
                 <tr>
-                  <td> <?= $d['id_stok_keluar'] ?> </td>
+                  <td> <?= $d['id_stok_masuk'] ?> </td>
                   <td> <?= $d['kode_produk'] ?> </td>
-                  <td> <?= $d['nama_pelanggan'] ?> </td>
+                  <td> <?= $d['nama_supplier'] ?> </td>
                   <td> <?= $d['nama_produk'] ?> </td>
                   <td> <?= $d['nama_lokasi'] ?> </td>
-                  <td> <?= $d['jumlah_keluar'] ?> </td>
-                  <td> <?= $d['tipe_keluar'] ?> </td>
+                  <td> <?= $d['jumlah_masuk'] ?> </td>
                   <td> <?= $d['nomor_referensi'] ?> </td>
                   <td> <?= $d['keterangan'] ?> </td>
-                  <td> <?= $d['date_of_exit'] ?> </td>
-                  
+                  <td> <?= $d['date_of_entry'] ?> </td>
                 </tr>
               <?php endforeach; ?>
             </tbody>

@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD:produk/produk_view.php
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>viewProduk</title>
+=======
+ <?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+header("Location:../view/login.php"); 
+exit;
+}
+?>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product List</title>
+>>>>>>> 1612d3249b602bd08771e5eff8799dbcea511304:web-stock-gudang/produk/produk_view.php
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
@@ -26,18 +40,53 @@
                 </div>
                 <div class="flex items-center gap-6">
                     <div class="flex items-center gap-2">
-                        <i class="fa-solid fa-user text-xl"></i>
-                        <span>John Doe</span>
+                        <button id="userButton" class="flex items-center space-x-2 focus:outline-none">
+                          <i class="fa-solid fa-user text-xl"></i>
+                          <span>Admin</span>
+                        </button>
+                        <div
+                            id="dropdownMenu"
+                            class="hidden absolute right-5 mt-20 w-20 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+                            <a
+                                href="../view/login.php"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                Logout
+                                
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
 
+<<<<<<< HEAD:produk/produk_view.php
+=======
+            <script>
+              const userButton = document.getElementById('userButton');
+              const dropdownMenu = document.getElementById('dropdownMenu');
+
+              userButton.addEventListener('click', () => {
+                  dropdownMenu.classList.toggle('hidden');
+                });
+
+              // Optional: close dropdown if clicked outside
+              window.addEventListener('click', function (e) {
+                  if (!userButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                      dropdownMenu.classList.add('hidden');
+                    }
+                });
+            </script>
+
+>>>>>>> 1612d3249b602bd08771e5eff8799dbcea511304:web-stock-gudang/produk/produk_view.php
             <section class="p-3">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="text-2xl font-semibold">Product List</h2>
                     <a href="tambah_produk_view.php">
                         <button class="p-3 bg-blue-600 text-white rounded hover:bg-blue-700">
+<<<<<<< HEAD:produk/produk_view.php
                             Tambah Produk +
+=======
+                            Add Product
+>>>>>>> 1612d3249b602bd08771e5eff8799dbcea511304:web-stock-gudang/produk/produk_view.php
                         </button>
                     </a>
                 </div>
@@ -60,8 +109,13 @@
                                 <p class="text-gray-600 text-sm"><?= $d['nama_produk'] ?></p>
                                 <div class="mt-2 font-semibold">
                                     <div class="flex flex-col items-start gap-1">
+<<<<<<< HEAD:produk/produk_view.php
                                         <h3 class="text-sm font-bold text-red-600">harga beli = <?= $d['harga_beli'] ?></h3>
                                         <h3 class="text-sm font-bold text-green-600">harga jual = <?= $d['harga_beli'] ?></h3>
+=======
+                                        <h3 class="text-sm font-bold text-black-600">harga beli = <?= $d['harga_beli'] ?></h3>
+                                        <h3 class="text-sm font-bold text-black-600">harga jual = <?= $d['harga_beli'] ?></h3>
+>>>>>>> 1612d3249b602bd08771e5eff8799dbcea511304:web-stock-gudang/produk/produk_view.php
                                     </div>
                                 </div>
                                 <a href="produk_details.php?kode_produk=<?= $d['kode_produk'] ?>">
