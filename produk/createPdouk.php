@@ -23,7 +23,7 @@ if ($_FILES['gambar_produk']['error'] === UPLOAD_ERR_OK) {
     if (in_array($file_extension, $allowed_extensions)) {
 
         $new_file_name = uniqid('img_', true) . '.' . $file_extension;
-        $upload_dir = 'assets/images/produk/';
+        $upload_dir = '../produk/assets/images/produk/';
 
 
         if (!is_dir($upload_dir)) {
