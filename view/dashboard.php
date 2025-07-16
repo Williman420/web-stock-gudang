@@ -211,28 +211,46 @@
                     </a>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <!-- Card 1 -->
-                    <div class="bg-white shadow-md rounded-2xl p-4 transform hover:scale-105 transition duration-300">
-                        <img src="/web-stock-gudang/view/mouse.png" alt="Product Image" class="w-full h-40 object-contain">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Product 1</h3>
-                        <p class="text-sm text-gray-600"><span class="font-medium">Location</span></p>
-                        <p class="text-sm text-gray-600"><span class="font-medium">25</span></p>
-                        <br>
-                        <h3 class="text-lg font-bold text-gray-800 mb-2">IDR 5000</h3>
-                    </div>
-
-                    <!-- Card 2 -->
-                    <div class="bg-white shadow-md rounded-2xl p-4 transform hover:scale-105 transition duration-300">
-                        <img src="/web-stock-gudang/view/keyboard.png" alt="Product Image" class="w-full h-40 object-contain">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Product 2</h3>
-                        <p class="text-sm text-gray-600"><span class="font-medium">Location</span></p>
-                        <p class="text-sm text-gray-600"><span class="font-medium">32</span></p>
-                        <br>
-                        <h3 class="text-lg font-bold text-gray-800 mb-2">IDR 5000</h3>
-                    </div>
+                    <?php
+                    include 'db_connection.php';
+                    $query = "SELECT 
+                            s.id_stok,
+                            s.jumlah_stok,
+                            s.tanggal_diperbarui,
+                            s.tanggal_terakhir_masuk,
+                            p.kode_produk,
+                            p.nama_produk,
+                            p.gambar_produk,
+                            p.stok_minimal,
+                            l.nama_lokasi
+                            FROM stok_saat_ini s
+                            JOIN produk p ON s.id_produk = p.id_produk
+                            JOIN lokasi_gudang l ON s.id_lokasi = l.id_lokasi 
+                            ORDER BY s.jumlah_stok DESC
+                            LIMIT 1";
+                    $data = mysqli_query($connection, $query);
+                    foreach ($data as $d) :
+                    ?>
+                        <div class="bg-white shadow-md rounded-2xl p-4 transform hover:scale-105 transition duration-300">
+                            <img src="<?= $d['gambar_produk'] ?>" class="w-full h-40 object-contain">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2"><?= $d['nama_produk'] ?></h3>
+                        <div class="flex items-center justify-between">
+                        <p class="text-sm text-gray-600">Lokasi Gudang</p>
+                        <p class="text-sm text-gray-600"><?= $d['nama_lokasi'] ?></p>
+                        </div>
+                    
+    
+                        <div class="flex items-center justify-between">
+                        <p class="text-sm text-gray-600">Jumlah Stok</p>
+                        <p class="text-sm <?= $d['jumlah_stok'] < $d['stok_minimal'] ? 'text-red-600 font-semibold' : 'text-gray-800' ?>">
+                        <?= $d['jumlah_stok'] ?>
+                        </p>
                 </div>
+                </div>        
+                <?php endforeach; ?>
             </div>
-        </section>
+           </section>  
+       
 
         <div class="w-full bg-white rounded-xl shadow-md p-6">
             <div class="flex justify-between items-center mb-4">
