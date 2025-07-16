@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php include '../view/auth.php'; ?>
 
 <head>
     <meta charset="UTF-8" />
@@ -61,18 +62,19 @@
     <main class="ml-64 flex-1 p-6 space-y-6">
 
         <!-- Top Bar -->
-        <div class="relative flex text-left justify-end ">
+        <div class="flex items-center gap-2">
             <button id="userButton" class="flex items-center space-x-2 focus:outline-none">
                 <i class="fa-solid fa-user text-xl"></i>
-                <span class="text-gray-800 font-medium">Admin</span>
+                <span> <?php echo $_SESSION['username']; ?></span></span>
             </button>
             <div
                 id="dropdownMenu"
-                class="hidden absolute right-0 mt-2 w-20 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+                class="hidden absolute right-5 mt-20 w-20 bg-white border border-gray-200 rounded-md shadow-lg z-50">
                 <a
-                    href="login.php"
+                    href="../view/login.php"
                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                     Logout
+
                 </a>
             </div>
         </div>
@@ -233,24 +235,24 @@
                     ?>
                         <div class="bg-white shadow-md rounded-2xl p-4 transform hover:scale-105 transition duration-300">
                             <img src="<?= $d['gambar_produk'] ?>" class="w-full h-40 object-contain">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2"><?= $d['nama_produk'] ?></h3>
-                        <div class="flex items-center justify-between">
-                        <p class="text-sm text-gray-600">Lokasi Gudang</p>
-                        <p class="text-sm text-gray-600"><?= $d['nama_lokasi'] ?></p>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-2"><?= $d['nama_produk'] ?></h3>
+                            <div class="flex items-center justify-between">
+                                <p class="text-sm text-gray-600">Lokasi Gudang</p>
+                                <p class="text-sm text-gray-600"><?= $d['nama_lokasi'] ?></p>
+                            </div>
+
+
+                            <div class="flex items-center justify-between">
+                                <p class="text-sm text-gray-600">Jumlah Stok</p>
+                                <p class="text-sm <?= $d['jumlah_stok'] < $d['stok_minimal'] ? 'text-red-600 font-semibold' : 'text-gray-800' ?>">
+                                    <?= $d['jumlah_stok'] ?>
+                                </p>
+                            </div>
                         </div>
-                    
-    
-                        <div class="flex items-center justify-between">
-                        <p class="text-sm text-gray-600">Jumlah Stok</p>
-                        <p class="text-sm <?= $d['jumlah_stok'] < $d['stok_minimal'] ? 'text-red-600 font-semibold' : 'text-gray-800' ?>">
-                        <?= $d['jumlah_stok'] ?>
-                        </p>
+                    <?php endforeach; ?>
                 </div>
-                </div>        
-                <?php endforeach; ?>
-            </div>
-           </section>  
-       
+        </section>
+
 
         <div class="w-full bg-white rounded-xl shadow-md p-6">
             <div class="flex justify-between items-center mb-4">

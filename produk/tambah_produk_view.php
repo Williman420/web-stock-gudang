@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
- <?php include '../view/auth.php'; ?>
+<?php include '../view/auth.php'; ?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,8 +25,8 @@
                 <div class="flex items-center gap-6">
                     <div class="flex items-center gap-2">
                         <button id="userButton" class="flex items-center space-x-2 focus:outline-none">
-                          <i class="fa-solid fa-user text-xl"></i>
-                          <span> <?php echo $_SESSION['username']; ?></span>
+                            <i class="fa-solid fa-user text-xl"></i>
+                            <span> <?php echo $_SESSION['username']; ?></span>
                         </button>
                         <div
                             id="dropdownMenu"
@@ -41,17 +42,17 @@
             </div>
 
             <script>
-              const userButton = document.getElementById('userButton');
-              const dropdownMenu = document.getElementById('dropdownMenu');
+                const userButton = document.getElementById('userButton');
+                const dropdownMenu = document.getElementById('dropdownMenu');
 
-              userButton.addEventListener('click', () => {
-                  dropdownMenu.classList.toggle('hidden');
+                userButton.addEventListener('click', () => {
+                    dropdownMenu.classList.toggle('hidden');
                 });
 
-              // Optional: close dropdown if clicked outside
-              window.addEventListener('click', function (e) {
-                  if (!userButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
-                      dropdownMenu.classList.add('hidden');
+                // Optional: close dropdown if clicked outside
+                window.addEventListener('click', function(e) {
+                    if (!userButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                        dropdownMenu.classList.add('hidden');
                     }
                 });
             </script>
