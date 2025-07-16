@@ -22,10 +22,7 @@
                     </button>
                 </a>
                 <div class="flex items-center gap-6">
-                    <div class="flex items-center gap-2">
-                        <i class="fa-solid fa-user text-xl"></i>
-                        <span>John Doe</span>
-                    </div>
+                   
                 </div>
             </div>
             <?php
