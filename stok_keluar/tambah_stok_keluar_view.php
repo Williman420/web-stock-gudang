@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
- <?php
-session_start();
-if (!isset($_SESSION['user_id'])) {
-header("Location:../view/login.php"); 
-exit;
-}
-?>
+<?php include '../view/auth.php'; ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +16,7 @@ exit;
 
         <div class="ml-64 flex flex-col w-full h-full overflow-y-auto px-5 py-6 ">
             <div class="flex w-full  justify-between mb-6">
-                <a href="../stokMasuk/stok_masuk_view.php">
+                <a href="../stok_keluar/stok_keluar_view.php">
                     <button class="p-5 bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
                         Back
                     </button>
@@ -31,7 +25,7 @@ exit;
                     <div class="flex items-center gap-2">
                         <button id="userButton" class="flex items-center space-x-2 focus:outline-none">
                           <i class="fa-solid fa-user text-xl"></i>
-                          <span>Admin</span>
+                          <span> <?php echo $_SESSION['username']; ?></span>
                         </button>
                         <div
                           id="dropdownMenu"
@@ -121,13 +115,6 @@ exit;
                         <textarea placeholder="Shipment Details" required name="keterangan"
                             class=" w-full   border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 "></textarea>
                     </div>
-<<<<<<< HEAD:stok_keluar/tambah_stok_keluar_view.php
-                    <button class="p-3 bg-blue-600 text-white rounded hover:bg-blue-700" type="submit">
-                        Add Stock Masuk
-                    </button>
-                </form>
-
-=======
                 </form>
             </div>
             <br>
@@ -135,7 +122,6 @@ exit;
                 <button class="p-3 bg-blue-600 text-white rounded hover:bg-blue-700" type="submit">
                     Add Stock Masuk
                 </button>
->>>>>>> 1612d3249b602bd08771e5eff8799dbcea511304:web-stock-gudang/stok_keluar/tambah_stok_keluar_view.php
             </div>
         </div>
     </div>

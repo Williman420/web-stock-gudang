@@ -60,13 +60,7 @@
     <main class="ml-64 flex-1 p-6 space-y-6">
 
         <!-- Top Bar -->
-         <?php
-session_start();
-if (!isset($_SESSION['user_id'])) {
-    header('Location: view/login.php');
-    exit;
-}
-?>
+        <?php include '../view/auth.php'; ?>
         <div class="flex justify-between items-center">
             <div class="flex items-center gap-2">
                 <input type="text" placeholder="Search for datas & reports..." class="px-4 py-2 rounded-md border w-96" />
@@ -75,16 +69,15 @@ if (!isset($_SESSION['user_id'])) {
             <div class="relative inline-block text-left">
                 <button id="userButton" class="flex items-center space-x-2 focus:outline-none">
                   <i class="fa-solid fa-user text-xl"></i>
-                  <span class="text-gray-800 font-medium">Admin</span>
+                  <span class="text-gray-800 font-medium"> <?php echo $_SESSION['username']; ?></span>
                 </button>
                 <div
                   id="dropdownMenu"
                   class="hidden absolute right-0 mt-2 w-20 bg-white border border-gray-200 rounded-md shadow-lg z-50"
                 >
                   <a
-                    href="login.php"
-                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                    >
+                    href="../view/login.php"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                     Logout
                   </a>
                 </div>

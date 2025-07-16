@@ -9,7 +9,7 @@ include 'db_connection.php';
 </head>
 <body>
     <a href="addStok.php">Tambah Stok</a>
-    <table border="1">
+    <table class= "border-1">
         <tr>
             <th>ID</th>
             <th>Produk</th>

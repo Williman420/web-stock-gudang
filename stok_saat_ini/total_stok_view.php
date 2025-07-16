@@ -7,149 +7,153 @@ if (!isset($_SESSION['user_id'])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<include lang="en">
+  <?php include '../view/auth.php'; ?>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Total Stock</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <style>
-    body {
-      font-family: "Segoe UI", sans-serif;
-      background-color: #f8f9fc;
-      padding: 0px;
-      margin: 0;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Total Stock</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-color: #f8f9fc;
+        padding: 0px;
+        margin: 0;
+      }
 
-    .container {
-      background: #fff;
-      border-radius: 8px;
-      padding: 24px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      max-width: 1200px;
-      margin: auto;
-    }
+      .container {
+        background: #fff;
+        border-radius: 8px;
+        padding: 24px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 
-    h2 {
-      color: #000000;
-      margin-bottom: 20px;
-    }
+        margin: auto;
+      }
 
-    .table-container {
-      overflow-x: auto;
-    }
+      h2 {
+        color: #000000;
+        margin-bottom: 20px;
+      }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 14px;
-      color: #5a5c69;
-    }
+      .table-container {
+        overflow-x: auto;
+      }
 
-    thead {
-      background-color: #f8f9fc;
-    }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+        color: #5a5c69;
+      }
 
-    td {
-      padding: 12px 16px;
-      border: 1px solid #e3e6f0;
-      text-align: left;
-    }
+      thead {
+        background-color: #f8f9fc;
+      }
 
-    th {
-      font-weight: 600;
-      white-space: nowrap;
-    }
+      td {
+        padding: 12px 16px;
+        border: 1px solid #e3e6f0;
+        text-align: left;
+      }
 
-    .pagination {
-      margin-top: 20px;
-      text-align: right;
-    }
+      th {
+        font-weight: 600;
+        white-space: nowrap;
+      }
 
-    .pagination a {
-      padding: 6px 12px;
-      margin: 0 2px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      text-decoration: none;
-      color: #4e73df;
-      font-size: 14px;
-    }
+      .pagination {
+        margin-top: 20px;
+        text-align: right;
+      }
 
-    .pagination a.active {
-      background-color: #4e73df;
-      color: #fff;
-    }
-  </style>
-</head>
+      .pagination a {
+        padding: 6px 12px;
+        margin: 0 2px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        text-decoration: none;
+        color: #4e73df;
+        font-size: 14px;
+      }
 
-<body class="bg-gray-100 text-gray-800 h-screen overflow-hidden">
-  <div class="flex h-full">
-    <!-- Sidebar -->
-    <?php include '../component/sidebar.php'; ?>
+      .pagination a.active {
+        background-color: #4e73df;
+        color: #fff;
+      }
+    </style>
+  </head>
 
-    <!-- Main content -->
-    <div class="ml-64 flex-1 p-6 flex-col space-y-6 overflow-auto">
-      <div class="w-full h-fit flex justify-between mb-6">
-        <div class="flex items-center gap-2">
-          <input type="text" placeholder="Search for datas & reports..." class="px-4 py-2 rounded-md border w-96" />
-          <button class="bg-blue-600 text-white px-4 py-2 rounded-md">
-            <i class="fa fa-search"></i>
-          </button>
-        </div>
-        <div class="flex items-center gap-6">
+  <body class="bg-gray-100 text-gray-800 h-screen overflow-hidden">
+    <div class="flex h-full">
+      <!-- Sidebar -->
+      <?php include '../component/sidebar.php'; ?>
+
+      <!-- Main content -->
+      <div class="ml-64 flex-1 p-6  space-y-6 overflow-auto">
+        <div class="w-full h-fit flex justify-between mb-6">
           <div class="flex items-center gap-2">
+            <input type="text" placeholder="Search for datas & reports..." class="px-4 py-2 rounded-md border w-96" />
+            <button class="bg-blue-600 text-white px-4 py-2 rounded-md">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+          <div class="flex items-center gap-6">
             <button id="userButton" class="flex items-center space-x-2 focus:outline-none">
               <i class="fa-solid fa-user text-xl"></i>
-              <span>Admin</span>
+              <span> <?php echo $_SESSION['username']; ?></span>
             </button>
-            <div id="dropdownMenu" class="hidden absolute right-5 mt-20 w-20 bg-white border border-gray-200 rounded-md shadow-lg z-50">
-              <a href="../view/login.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+            <div
+              id="dropdownMenu"
+              class="hidden absolute right-5 mt-20 w-20 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+              <a
+
+                href="../view/login.php"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                 Logout
               </a>
             </div>
           </div>
         </div>
-      </div>
 
-      <script>
-        const userButton = document.getElementById('userButton');
-        const dropdownMenu = document.getElementById('dropdownMenu');
+        <script>
+          const userButton = document.getElementById('userButton');
+          const dropdownMenu = document.getElementById('dropdownMenu');
 
-        userButton.addEventListener('click', () => {
-          dropdownMenu.classList.toggle('hidden');
-        });
+          userButton.addEventListener('click', () => {
+            dropdownMenu.classList.toggle('hidden');
+          });
 
-        window.addEventListener('click', function(e) {
-          if (!userButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
-            dropdownMenu.classList.add('hidden');
-          }
-        });
-      </script>
+          window.addEventListener('click', function(e) {
+            if (!userButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
+              dropdownMenu.classList.add('hidden');
+            }
+          });
+        </script>
 
-      <div class="container">
-        <div class="flex justify-between items-center mb-4">
-          <h2 class="text-2xl font-semibold">Total Stock</h2>
-        </div>
-        <br>
-        <div class="table-container">
-          <table>
-            <thead>
-              <tr>
-                <th>ID Product</th>
-                <th>Product Name</th>
-                <th>Location</th>
-                <th>Stock Amount</th>
-                <th>Date of Entry</th>
-                <th>Date of Exit</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php
-              include 'db_connection.php';
-              $query = "
+        <div class="container w-full">
+          <div class="flex justify-between items-center mb-4">
+            <h2 class="text-2xl font-semibold">Total Stock</h2>
+          </div>
+          <br>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID Product</th>
+                  <th>Product Name</th>
+                  <th>Location</th>
+                  <th>Stock Amount</th>
+                  <th>Date of Entry</th>
+                  <th>Date of Exit</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                include 'db_connection.php';
+                $query = "
               SELECT 
                 s.id_stok,
                 s.jumlah_stok,
@@ -163,41 +167,41 @@ if (!isset($_SESSION['user_id'])) {
               JOIN produk p ON s.id_produk = p.id_produk
               JOIN lokasi_gudang l ON s.id_lokasi = l.id_lokasi
               ";
-              $data = mysqli_query($connection, $query);
-              if (mysqli_num_rows($data) > 0) {
-                foreach ($data as $d) :
-              ?>
-                  <tr>
-                    <td><?= $d['kode_produk'] ?></td>
-                    <td><?= $d['nama_produk'] ?></td>
-                    <td><?= $d['nama_lokasi'] ?></td>
-                    <td class="<?= $d['jumlah_stok'] < $d['stok_minimal'] ? 'text-red-600 font-semibold' : 'text-gray-800' ?>">
-                      <?= $d['jumlah_stok'] ?>
-                    </td>
-                    <td><?= date('Y/m/d', strtotime($d['tanggal_terakhir_masuk'])) ?></td>
-                    <td><?= date('Y/m/d', strtotime($d['tanggal_diperbarui'])) ?></td>
-                  </tr>
-              <?php
-                endforeach;
-              } else {
-                echo "<tr><td colspan='6' class='text-center text-gray-500'>No data available</td></tr>";
-              }
-              ?>
-            </tbody>
-          </table>
-        </div>
+                $data = mysqli_query($connection, $query);
+                if (mysqli_num_rows($data) > 0) {
+                  foreach ($data as $d) :
+                ?>
+                    <tr>
+                      <td><?= $d['kode_produk'] ?></td>
+                      <td><?= $d['nama_produk'] ?></td>
+                      <td><?= $d['nama_lokasi'] ?></td>
+                      <td class="<?= $d['jumlah_stok'] < $d['stok_minimal'] ? 'text-red-600 font-semibold' : 'text-gray-800' ?>">
+                        <?= $d['jumlah_stok'] ?>
+                      </td>
+                      <td><?= date('Y/m/d', strtotime($d['tanggal_terakhir_masuk'])) ?></td>
+                      <td><?= date('Y/m/d', strtotime($d['tanggal_diperbarui'])) ?></td>
+                    </tr>
+                <?php
+                  endforeach;
+                } else {
+                  echo "<tr><td colspan='6' class='text-center text-gray-500'>No data available</td></tr>";
+                }
+                ?>
+              </tbody>
+            </table>
+          </div>
 
-        <div class="pagination">
-          <a href="#" class="active">1</a>
-          <a href="#">2</a>
-          <a href="#">3</a>
-          <a href="#">4</a>
-          <a href="#">5</a>
-          <a href="#">Next</a>
+          <div class="pagination">
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">Next</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</body>
+  </body>
 
-</html>
+  </html>

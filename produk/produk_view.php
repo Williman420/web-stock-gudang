@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
- <?php
-session_start();
-if (!isset($_SESSION['user_id'])) {
-header("Location:../view/login.php"); 
-exit;
-}
-?>
+ <?php include '../view/auth.php'; ?>
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -34,7 +28,7 @@ exit;
                     <div class="flex items-center gap-2">
                         <button id="userButton" class="flex items-center space-x-2 focus:outline-none">
                           <i class="fa-solid fa-user text-xl"></i>
-                          <span>Admin</span>
+                          <span> <?php echo $_SESSION['username']; ?></span></span>
                         </button>
                         <div
                             id="dropdownMenu"
