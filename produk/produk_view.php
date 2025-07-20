@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
- <?php include '../view/auth.php'; ?>
+<?php include '../view/auth.php'; ?>
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,45 +18,35 @@
 
         <!-- Main content (scrollable only here) -->
         <div class="flex-1 ml-64 p-6 space-y-6 overflow-auto">
-            <div class="w-full h-fit flex justify-between mb-6">
-                <div class="flex items-center gap-2">
-                    <input type="text" placeholder="Search for datas & reports..." class="px-4 py-2 rounded-md border w-96" />
-                    <button class="bg-blue-600 text-white px-4 py-2 rounded-md">
-                        <i class="fa fa-search"></i>
-                    </button>
-                </div>
-                <div class="flex items-center gap-6">
-                    <div class="flex items-center gap-2">
-                        <button id="userButton" class="flex items-center space-x-2 focus:outline-none">
-                          <i class="fa-solid fa-user text-xl"></i>
-                          <span> <?php echo $_SESSION['username']; ?></span></span>
-                        </button>
-                        <div
-                            id="dropdownMenu"
-                            class="hidden absolute right-5 mt-20 w-20 bg-white border border-gray-200 rounded-md shadow-lg z-50">
-                            <a
-                                href="../view/login.php"
-                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                                Logout
-                                
-                            </a>
-                        </div>
-                    </div>
+            <div class="flex items-center gap-2 justify-end">
+                <button id="userButton" class="flex items-center space-x-2 focus:outline-none">
+                    <i class="fa-solid fa-user text-xl"></i>
+                    <span> <?php echo $_SESSION['username']; ?></span></span>
+                </button>
+                <div
+                    id="dropdownMenu"
+                    class="hidden absolute right-5 mt-20 w-20 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+                    <a
+                        href="../view/login.php"
+                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                        Logout
+
+                    </a>
                 </div>
             </div>
 
             <script>
-              const userButton = document.getElementById('userButton');
-              const dropdownMenu = document.getElementById('dropdownMenu');
+                const userButton = document.getElementById('userButton');
+                const dropdownMenu = document.getElementById('dropdownMenu');
 
-              userButton.addEventListener('click', () => {
-                  dropdownMenu.classList.toggle('hidden');
+                userButton.addEventListener('click', () => {
+                    dropdownMenu.classList.toggle('hidden');
                 });
 
-              // Optional: close dropdown if clicked outside
-              window.addEventListener('click', function (e) {
-                  if (!userButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
-                      dropdownMenu.classList.add('hidden');
+                // Optional: close dropdown if clicked outside
+                window.addEventListener('click', function(e) {
+                    if (!userButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                        dropdownMenu.classList.add('hidden');
                     }
                 });
             </script>
