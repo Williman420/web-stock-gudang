@@ -253,116 +253,84 @@
         </section>
 
 
-        <div class="w-full bg-white rounded-xl shadow-md p-6">
-            <div class="flex justify-between items-center mb-4">
-                <h2 class="text-xl font-semibold text-gray-800">Recently Added Stock</h2>
+         <?php
+
+        $query = "SELECT sm.tanggal_masuk, sm.jumlah_masuk, p.nama_produk, p.gambar_produk, s.nama_supplier
+          FROM stok_masuk sm
+          JOIN produk p ON sm.id_produk = p.id_produk
+          JOIN supplier s ON sm.id_supplier = s.id_supplier
+          ORDER BY sm.tanggal_masuk DESC
+          LIMIT 5";
+
+        $result = mysqli_query($connection, $query);
+        ?>
+
+            <div class="w-full bg-white rounded-xl shadow-md p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-semibold text-gray-800">Recently Added Stock</h2>
                 <a href="../stokMasuk/stok_masuk_view.php">
-                    <button class="p-3 bg-blue-600 text-white rounded hover:bg-blue-700">View Details</button>
-                </a>
+            <button class="p-3 bg-blue-600 text-white rounded hover:bg-blue-700">View Details</button>
+        </a>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-2">
+        <?php while($row = mysqli_fetch_assoc($result)): ?>
+            <div class="bg-white shadow-md rounded-2xl p-4 transform hover:scale-105 transition duration-300">
+                <img src="<?= $row['gambar_produk'] ?>" alt="Product Image" class="w-full h-40 object-contain">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2"><?= htmlspecialchars($row['nama_produk']) ?></h3>
+                <p class="text-sm text-gray-600"><span class="font-medium"><?= htmlspecialchars($row['nama_supplier']) ?></span></p>
+                <p class="text-sm text-gray-600"><span class="font-medium"><?= $row['jumlah_masuk'] ?></span></p>
+                <p class="text-sm text-gray-600"><span class="font-medium"><?= $row['tanggal_masuk'] ?></span></p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-2">
-                <!-- Card 1 -->
-                <div class="bg-white shadow-md rounded-2xl p-4 transform hover:scale-105 transition duration-300">
-                    <img src="/web-stock-gudang/view/mouse.png" alt="Product Image" class="w-full h-40 object-contain">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Product 1</h3>
-                    <p class="text-sm text-gray-600"><span class="font-medium">Supplier A</span></p>
-                    <p class="text-sm text-gray-600"><span class="font-medium">25</span></p>
-                    <p class="text-sm text-gray-600"><span class="font-medium">2025/07/04</span></p>
-                </div>
+        <?php endwhile; ?>
+    </div>
+</div>
 
-                <!-- Card 2 -->
-                <div class="bg-white shadow-md rounded-2xl p-4 transform hover:scale-105 transition duration-300">
-                    <img src="/web-stock-gudang/view/keyboard.png" alt="Product Image" class="w-full h-40 object-contain">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Product 2</h3>
-                    <p class="text-sm text-gray-600"><span class="font-medium">Supplier B</span></p>
-                    <p class="text-sm text-gray-600"><span class="font-medium">32</span></p>
-                    <p class="text-sm text-gray-600"><span class="font-medium">2025/07/04</span></p>
-                </div>
 
-                <!-- Card 3 -->
-                <div class="bg-white shadow-md rounded-2xl p-4 transform hover:scale-105 transition duration-300">
-                    <img src="/web-stock-gudang/view/keyboard.png" alt="Product Image" class="w-full h-40 object-contain">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Product 2</h3>
-                    <p class="text-sm text-gray-600"><span class="font-medium">Supplier c</span></p>
-                    <p class="text-sm text-gray-600"><span class="font-medium">32</span></p>
-                    <p class="text-sm text-gray-600"><span class="font-medium">2025/07/04</span></p>
-                </div>
+        <?php
+$query = "SELECT sk.tanggal_keluar, sk.jumlah_keluar, sk.tipe_keluar, p.nama_produk, p.gambar_produk, l.nama_lokasi
+          FROM stok_keluar sk
+          JOIN produk p ON sk.id_produk = p.id_produk
+          JOIN lokasi_gudang l ON sk.id_lokasi = l.id_lokasi
+          ORDER BY sk.tanggal_keluar DESC
+          LIMIT 5";
 
-                <!-- Card 4 -->
-                <div class="bg-white shadow-md rounded-2xl p-4 transform hover:scale-105 transition duration-300">
-                    <img src="/web-stock-gudang/view/keyboard.png" alt="Product Image" class="w-full h-40 object-contain">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Product 2</h3>
-                    <p class="text-sm text-gray-600"><span class="font-medium">Supplier D</span></p>
-                    <p class="text-sm text-gray-600"><span class="font-medium">56</span></p>
-                    <p class="text-sm text-gray-600"><span class="font-medium">2025/07/04</span></p>
-                </div>
+$result = mysqli_query($connection, $query);
+?>
 
-                <!-- Card 5 -->
-                <div class="bg-white shadow-md rounded-2xl p-4 transform hover:scale-105 transition duration-300">
-                    <img src="/web-stock-gudang/view/keyboard.png" alt="Product Image" class="w-full h-40 object-contain">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Product 2</h3>
-                    <p class="text-sm text-gray-600"><span class="font-medium">Supplier E</span></p>
-                    <p class="text-sm text-gray-600"><span class="font-medium">27</span></p>
-                    <p class="text-sm text-gray-600"><span class="font-medium">2025/07/04</span></p>
-                </div>
-            </div>
-        </div>
+<div class="w-full bg-white rounded-xl shadow-md p-6">
+    <div class="flex justify-between items-center mb-4">
+        <h2 class="text-xl font-semibold text-gray-800">Outed Stock by Exit Type</h2>
+        <a href="../stok_keluar/stok_keluar_view.php">
+            <button class="p-3 bg-blue-600 text-white rounded hover:bg-blue-700">View Details</button>
+        </a>
+    </div>
+    <table class="w-full text-sm text-left text-gray-500">
+        <thead class="text-medium text-gray-700 bg-gray-50">
+            <tr>
+                <th class="px-6 py-3">Product Image</th>
+                <th class="px-6 py-3">Product Name</th>
+                <th class="px-6 py-3">Location</th>
+                <th class="px-6 py-3">Exit Stock Amount</th>
+                <th class="px-6 py-3">Exit Type</th>
+                <th class="px-6 py-3">Date of Exit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php while($row = mysqli_fetch_assoc($result)): ?>
+                <tr class="bg-white border-b hover:bg-gray-50">
+                    <td class="px-6 py-4">
+                        <img class="w-20 h-20 object-contain" src="<?= $row['gambar_produk'] ?>" alt="Product Image">
+                    </td>
+                    <td class="px-6 py-4"><?= htmlspecialchars($row['nama_produk']) ?></td>
+                    <td class="px-6 py-4"><?= htmlspecialchars($row['nama_lokasi']) ?></td>
+                    <td class="px-6 py-4"><?= $row['jumlah_keluar'] ?></td>
+                    <td class="px-6 py-4"><?= $row['tipe_keluar'] ?></td>
+                    <td class="px-6 py-4"><?= $row['tanggal_keluar'] ?></td>
+                </tr>
+            <?php endwhile; ?>
+        </tbody>
+    </table>
+</div>
 
-        <div class="w-full bg-white rounded-xl shadow-md p-6">
-            <div class="flex justify-between items-center mb-4">
-                <h2 class="text-xl font-semibold text-gray-800">Outed Stock by Exit Type</h2>
-                <a href="../stok_keluar/stok_keluar_view.php">
-                    <button class="p-3 bg-blue-600 text-white rounded hover:bg-blue-700">View Details</button>
-                </a>
-            </div>
-            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                <thead class="text-medium text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                    <tr>
-                        <th scope="col" class="px-6 py-3">
-                            Product Image
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Product Name
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Location
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Exit Stock Amount
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Exit Type
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Date of Exit
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <td class="px-6 py-4">
-                            <img class="w-50 h-50 mr-5" src="/web-stock-gudang/view/keyboard.png" alt="Product Image">
-                        </td>
-                        <td class="px-6 py-4">
-                            Product 1
-                        </td>
-                        <td class="px-6 py-4">
-                            Bali
-                        </td>
-                        <td class="px-6 py-4">
-                            5
-                        </td>
-                        <td class="px-6 py-4">
-                            Sold
-                        </td>
-                        <td class="px-6 py-4">
-                            2025/07/05
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </main>
-</body>
 
 </html>
