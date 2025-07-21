@@ -70,14 +70,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         />
       </div>
 
-      <!-- Remember Me -->
-      <div class="flex items-center justify-between text-sm mt-1">
-        <label class="flex items-center space-x-2">
-          <input type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded" />
-          <span class="text-gray-700">Remember me</span>
-        </label>
-      </div>
-
       <!-- Submit Button -->
       <button
         type="submit"
