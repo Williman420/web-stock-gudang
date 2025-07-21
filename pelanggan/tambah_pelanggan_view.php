@@ -63,7 +63,7 @@
 
                     <div class="flex justify-between items-center mb-4">
                         <button class="p-3 bg-blue-600 text-white rounded hover:bg-blue-700" type="submit">
-                            Add Supplier
+                            Add Pelanggan
                         </button>
                     </div>
                 </form>
